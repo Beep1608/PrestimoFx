@@ -3,21 +3,96 @@
  */
 package org.example;
 
+import org.example.buy_jewelry.BuyJewelryController;
+import org.example.dashboard.DashboardController;
+import org.example.dashboard.DashboardModel;
+import org.example.dashboard.DashboardView;
+import org.example.jewelry.JewelryObject;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.jpa.HibernatePersistenceConfiguration;
+import org.hibernate.jpa.HibernatePersistenceProvider;
+
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+//import javax.naming.*;
+
+import jakarta.persistence.spi.PersistenceProvider;
+
+
+
 public class App extends Application {
-   
+   private Session session;
 
     public static void main(String[] args) {
-        launch(args);
+        printClassLoaderInfo();
+        hibernate();
+        
+        //aunch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setScene(new Scene(new DashboardPane()));
+    // Imprimir Module Path
+    printClassLoaderInfo();
+    String modulePath = System.getProperty("jdk.module.path");
+    System.out.println("Module Path: " + (modulePath != null ? modulePath : "No está definido"));
+    
+    // Imprimir Classpath
+    String classPath = System.getProperty("java.class.path");
+    System.out.println("Classpath: " + classPath);
+
+
+
+       
+
+        primaryStage.setMaximized(true);
+        DashboardController controller = new DashboardController(session);
+        Scene scene = new Scene(controller.getView());
+        String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
+        scene.getStylesheets().add(cssPath);
+        primaryStage.setScene(scene);
         primaryStage.show();
+        
+    
+    }
+
+    private static void hibernate(){
+        var seesionFactory = new HibernatePersistenceConfiguration("Prestimo")
+                .managedClass(JewelryObject.class)
+                .jdbcUrl("jdbc:postgresql://localhost:5432/prestimo")
+                 .jdbcCredentials("postgres", "12345")
+                 .jdbcPoolSize(16)
+                .showSql(true, true, true)
+                .createEntityManagerFactory();
+
+               
+        //seesionFactory.getSchemaManager().create(true);
+       // session = seesionFactory.openSession();
+    }
+    public static void printClassLoaderInfo() {
+      ClassLoader classLoader = App.class.getClassLoader();
+    System.out.println("\n=== ClassLoader Information ===");
+    System.out.println("Current ClassLoader: " + classLoader);
+    System.out.println("Parent ClassLoader: " + classLoader.getParent());
+    System.out.println("GrandParent ClassLoader: " + classLoader.getParent().getParent());
+    
+    // Verificar carga específica de PersistenceProvider
+    try {
+        Class<?> persistenceProviderClass = Class.forName("jakarta.persistence.spi.PersistenceProvider");
+        System.out.println("\nPersistenceProvider ClassLoader: " + persistenceProviderClass.getClassLoader());
+        System.out.println("PersistenceProvider successfully loaded");
+    } catch (ClassNotFoundException e) {
+        System.out.println("Error loading PersistenceProvider: " + e.getMessage());
+    }
+    
+    
     }
 }

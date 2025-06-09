@@ -9,6 +9,8 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
+   // id("org.gradlex.extra-java-module-info") version "1.12"
+ 
 }
 
 repositories {
@@ -18,24 +20,52 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
+    //testImplementation(libs.junit.jupiter)
 
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    //testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
-    implementation(libs.guava)
+   // implementation(libs.guava)
    // implementation(project(":back"))
+   //implementation("org.gradlex:extra-java-module-info:1.12")
+    // implementation("com.github.sarxos:webcam-capture:0.3.12")
+    // implementation("org.slf4j:slf4j-api:1.7.30")
+    // implementation("com.google.android.tools:dx:1.7")
+       // the GOAT ORM
+    implementation("org.hibernate.orm:hibernate-core:7.0.0.Final")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
+  
+
+
+
+    // Hibernate Processor
+    annotationProcessor ("org.hibernate.orm:hibernate-processor:7.0.0.Final")
+
+    // Hibernate Validator
+    implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
+    implementation("org.glassfish:jakarta.el:4.0.2")
+
+    // Agroal connection pool
+    runtimeOnly ("org.hibernate.orm:hibernate-agroal:7.0.0.Final")
+    runtimeOnly ("io.agroal:agroal-pool:2.5")
+
+    // logging via Log4j
+    runtimeOnly ("org.apache.logging.log4j:log4j-core:2.24.1")
+
+   implementation("org.postgresql:postgresql:42.7.5")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
+   // modularity.inferModulePath.set(false)
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 javafx {
-    modules("javafx.controls", "javafx.graphics")
+    modules("javafx.controls", "javafx.graphics", "javafx.swing")
+    version = "21"
 }
 application {
     // Define the main class for the application.
@@ -43,7 +73,35 @@ application {
     mainClass = "org.example.App"
 }
 
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
+// add module information for all direct and transitive dependencies that are not modules
+// extraJavaModuleInfo {
+//     deriveAutomaticModuleNamesFromFileNames = true
+    
+//     module("com.github.sarxos:webcam-capture", "com.github.sarxos.webcam.capture") {
+//         exportAllPackages()
+//         requireAllDefinedDependencies()
+//     }
+    
+//     module("com.nativelibs4java:bridj", "com.nativelibs4java.bridj") {
+//         exportAllPackages()
+//         requireAllDefinedDependencies()
+//     }
+    
+//     module("org.slf4j:slf4j-api", "org.slf4j") {
+//         exportAllPackages()
+//         overrideModuleName()
+//     }
+    
+//     module("com.google.android.tools:dx", "com.google.android.tools.dx") {
+//         exportAllPackages()
+//     }
+// }
+
+
+// tasks.named<Test>("test") {
+//     // Use JUnit Platform for unit tests.
+//     useJUnitPlatform()
+// }
+
+// Tarea modificada para que solo jakarta.persistence esté en el classpath
+
