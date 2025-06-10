@@ -1,0 +1,40 @@
+package org.example.metal_prices;
+
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class MetalPricesModel {
+
+    private final SimpleIntegerProperty id = new SimpleIntegerProperty();
+
+    private final SimpleStringProperty metal = new SimpleStringProperty();
+    private final SimpleDoubleProperty price_onz  = new SimpleDoubleProperty();
+    private final SimpleDoubleProperty price_gr  = new SimpleDoubleProperty();
+    private final SimpleIntegerProperty currency_prices_id = new SimpleIntegerProperty();
+
+    public IntegerProperty id(){
+        return  id;
+    }
+
+    public StringProperty metal(){
+        return  metal;
+    }
+
+    public DoubleProperty price_onz(){
+        return  price_onz;
+    }
+
+    public DoubleProperty price_gr(){
+        return price_gr;
+    }
+
+    public IntegerProperty currency_prices_id(){
+        return currency_prices_id;
+    }
+
+    
+}

@@ -9,13 +9,7 @@ public class ConstantsModel  {
     private final SimpleDoubleProperty security_value = new SimpleDoubleProperty();
     private final SimpleDoubleProperty revenue_gr = new SimpleDoubleProperty();
    
-    static String table = "constants";
-    static String[] fieldNames = new String[]{
-        "conversion_factor",
-        "security_value",
-        "revenue_gr"
-    };
-
+ 
     public DoubleProperty conversion_factor() {
         return conversion_factor;
     }
