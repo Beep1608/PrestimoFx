@@ -33,26 +33,17 @@ dependencies {
     // implementation("com.google.android.tools:dx:1.7")
        // the GOAT ORM
     implementation("org.hibernate.orm:hibernate-core:7.0.0.Final")
+
     implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
-  
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+    implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0")
+    //Dependencias extras
+    implementation("org.jboss.logging:jboss-logging:3.6.1.Final")
+    implementation("com.fasterxml:classmate:1.7.0")
+    implementation("net.bytebuddy:byte-buddy:1.17.5")
 
+    implementation("org.postgresql:postgresql:42.7.6")
 
-
-    // Hibernate Processor
-    annotationProcessor ("org.hibernate.orm:hibernate-processor:7.0.0.Final")
-
-    // Hibernate Validator
-    implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
-    implementation("org.glassfish:jakarta.el:4.0.2")
-
-    // Agroal connection pool
-    runtimeOnly ("org.hibernate.orm:hibernate-agroal:7.0.0.Final")
-    runtimeOnly ("io.agroal:agroal-pool:2.5")
-
-    // logging via Log4j
-    runtimeOnly ("org.apache.logging.log4j:log4j-core:2.24.1")
-
-   implementation("org.postgresql:postgresql:42.7.5")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -71,6 +62,9 @@ application {
     // Define the main class for the application.
     mainModule = "responsive"
     mainClass = "org.example.App"
+}
+tasks.withType<JavaExec> {
+    jvmArgs("--add-reads", "org.jboss.logging=java.logging")
 }
 
 // add module information for all direct and transitive dependencies that are not modules

@@ -1,24 +1,28 @@
 package org.example.jewelry;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name ="jewelries")
 public class JewelryObject {
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+  
     private String metal;
     
-    @NotNull
+   
     private String caratage;
     
-    @NotNull
+  
     private double weight;
     
-    @NotNull
+   
     private String description;
 
     public JewelryObject() {

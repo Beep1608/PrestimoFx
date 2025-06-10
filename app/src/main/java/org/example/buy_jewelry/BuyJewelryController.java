@@ -2,12 +2,9 @@ package org.example.buy_jewelry;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
-import org.example.jewelry.JewelryModel;
 import org.example.jewelry.JewelryView;
 
-import javafx.concurrent.Task;
 import javafx.scene.layout.Region;
 
 public class BuyJewelryController {
@@ -41,7 +38,7 @@ public class BuyJewelryController {
 
     //TODO: implementar logica de guardado
     private void store(BuyJewelryModel model) {
-
+        System.out.println("Miua2");
         jewelryViews.save();
 
     }

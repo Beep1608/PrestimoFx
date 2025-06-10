@@ -3,11 +3,9 @@ package org.example.jewelry;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-import org.example.buy_jewelry.BuyJewelryModel;
 import org.hibernate.Session;
 
 import javafx.concurrent.Task;
-import javafx.scene.layout.Region;
 
 public class JewelryController {
     private final JewelryModel model;
@@ -29,7 +27,7 @@ public class JewelryController {
 
     //TODO: implementar logica de guardado
     private void store(Void unused) {
-
+        System.out.println("Guardando joya...");
 
         Task<Void> task = new Task<Void>() {
             @Override

@@ -3,21 +3,13 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-import org.example.components.CustomComboBox;
 import org.example.components.CustomLabeledComboBox;
-import org.example.components.CustomTextArea;
-import org.example.components.CustomTextField;
-import org.example.components.ImageContainer;
-import org.example.enums.CaratagesEnum;
-import org.example.enums.MetalsEnum;
-import org.example.jewelry.JewelryModel;
 import org.example.utils.Responsive;
 import org.example.view.FormView;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
 
 public class BuyJewelryView extends FormView {
     private final BuyJewelryModel model;
@@ -79,6 +71,7 @@ public class BuyJewelryView extends FormView {
     @Override
     protected void addActionsToCreateButton() {
         getCreateButton().setOnMouseClicked(event -> {
+            System.out.println("Miau");
            actions.get("store").accept(model);
         });
     }
