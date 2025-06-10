@@ -1,13 +1,11 @@
 package org.example.buy_jewelry;
 
-import org.example.constants.ConstantsModel;
-import org.example.jewelry.JewelryModel;
-
-
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class BuyJewelryModel {
 
@@ -91,26 +89,65 @@ public class BuyJewelryModel {
     //         ).get()
     //     );
     //     /*****/
-
-
-
-
-
-
     // }
 
-  
 
-    public SimpleDoubleProperty percentage_buy_applied() {
+    public DoubleProperty price_gr_inter(){
+        return  price_gr_inter;
+    }
+
+    public DoubleProperty revenue_extern_sale(){
+        return  revenue_extern_sale;
+    }
+
+    public DoubleProperty price_local_gr(){
+        return price_local_gr;
+    }
+
+    public DoubleProperty caratage_price(){
+        return caratage_price;
+    }
+
+    public DoubleProperty caratage_price_final(){
+        return caratage_price_final;
+    }
+
+    public DoubleProperty price_gr_final(){
+        return price_gr_final;
+    }
+
+    public DoubleProperty max_purchase_amount(){
+        return  max_purchase_amount;
+    }
+
+    public StringProperty image(){
+        return  image;
+    } 
+
+    public DoubleProperty percentage_buy_applied() {
         return percentage_buy_applied;
     }
-    public SimpleDoubleProperty percentage_buy_caratage_applied() {
+    public DoubleProperty percentage_buy_caratage_applied() {
         return percentage_buy_caratage_applied;
+    }
+
+    public IntegerProperty metal_price_id(){
+        return metal_price_id;
+    }
+
+    public IntegerProperty percentages_buy_id(){
+        return percentages_buy_id;
+    }
+
+    public IntegerProperty percentages_caratage_id (){
+        return percentages_caratage_id;
+    }
+
+    public IntegerProperty constants_id(){
+        return contants_id;
     }
 
     public IntegerProperty jewelry_id() {
         return jewelry_id;
     }
-
-    
 }

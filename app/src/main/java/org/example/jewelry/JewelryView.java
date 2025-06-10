@@ -104,13 +104,7 @@ public class JewelryView implements Builder<Region> {
         container.getChildren().addAll(comboBox, caratageCombo, imageContainer, weigthField, descriptionField);
 
     }
-    public void save(){
-        if (actions.containsKey("store")) {
-            actions.get("store").accept(null);
-        } else {
-            System.out.println("No action defined for 'store'");
-        }
-    }
+
 
     
 }

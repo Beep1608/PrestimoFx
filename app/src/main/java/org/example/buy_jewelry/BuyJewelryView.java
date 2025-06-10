@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 import org.example.components.CustomLabeledComboBox;
-import org.example.utils.Responsive;
 import org.example.view.FormView;
 
 import javafx.scene.control.Button;
@@ -13,21 +12,29 @@ import javafx.scene.layout.Region;
 
 public class BuyJewelryView extends FormView {
     private final BuyJewelryModel model;
-    private final Region jewelryView;
 
-    private final HashMap<String, Consumer<BuyJewelryModel>> actions;
+    private final Region jewelryView;
+    private final  Region buyPercentagesView;
+     private final  Region buyCaratagePercentagesView;
+
+    private final HashMap<String, Consumer<Void>> actions;
 
     private Button calculateButton;
+
     
     public BuyJewelryView( 
         BuyJewelryModel model, 
         Region jewelryView,
-        HashMap<String, Consumer<BuyJewelryModel>> actions
+        Region buyPercentagesView,
+        Region buyCaratagePercentagesView,
+        HashMap<String, Consumer<Void>> actions
     ) 
     {
         super();
         this.model = model;
         this.jewelryView = jewelryView;
+        this.buyPercentagesView = buyPercentagesView;
+        this.buyCaratagePercentagesView = buyCaratagePercentagesView;
         this.actions = actions;
         
     }
@@ -44,13 +51,7 @@ public class BuyJewelryView extends FormView {
 
     @Override
     protected void addFieldsToSpecialDataContainer() {
-        CustomLabeledComboBox percentageCaratageBox = new CustomLabeledComboBox("Porcentajes en prestamo");
-        percentageCaratageBox.getCombo().getItems().addAll("Minimo", "Medio", "Maximo");
-        Responsive.bindingToParentWidth(percentageCaratageBox, 1);
-
-        CustomLabeledComboBox percentageBuyBox =  new CustomLabeledComboBox("Porcentajes en compra");
-        percentageBuyBox.getCombo().getItems().addAll("Minimo", "Medio", "Maximo");
-        Responsive.bindingToParentWidth(percentageBuyBox, 1);
+    
 
         HBox buttonContainer = new HBox();
 
@@ -58,7 +59,7 @@ public class BuyJewelryView extends FormView {
         calculateButton.getStyleClass().add("calculate-button");
         buttonContainer.getChildren().add(calculateButton);
         addActionsToCalculateButton();
-        specialDataContainer.getContentContainer().getChildren().addAll(percentageCaratageBox, percentageBuyBox, buttonContainer);
+        specialDataContainer.getContentContainer().getChildren().addAll(buyCaratagePercentagesView, buyPercentagesView, buttonContainer);
     }
 
     private void addActionsToCalculateButton(){
@@ -72,7 +73,7 @@ public class BuyJewelryView extends FormView {
     protected void addActionsToCreateButton() {
         getCreateButton().setOnMouseClicked(event -> {
             System.out.println("Miau");
-           actions.get("store").accept(model);
+           actions.get("store").accept(null);
         });
     }
 

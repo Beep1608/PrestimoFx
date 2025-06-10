@@ -10,7 +10,7 @@ public class JewelryService {
     }
 
     public JewelryObject store(String metal, String caratage, double weight, String description) {
-        System.out.println("Onichan");
+   
         JewelryObject jewelryObject = new JewelryObject(metal, caratage, weight, description);
         session.beginTransaction();
         session.persist(jewelryObject);

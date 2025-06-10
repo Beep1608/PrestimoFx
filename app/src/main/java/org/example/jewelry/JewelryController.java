@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import org.hibernate.Session;
 
 import javafx.concurrent.Task;
+import javafx.scene.layout.Region;
 
 public class JewelryController {
     private final JewelryModel model;
@@ -20,13 +21,17 @@ public class JewelryController {
         this.view = new JewelryView(model,actions);
     }   
 
-    public JewelryView getView() {
-        return view;
+    
+    public Region getView() {
+        return view.build();
     }
 
+    public JewelryModel getModel(){
+        return  model;
+    }
 
     //TODO: implementar logica de guardado
-    private void store(Void unused) {
+    public  void store(Void unused) {
         System.out.println("Guardando joya...");
 
         Task<Void> task = new Task<Void>() {
