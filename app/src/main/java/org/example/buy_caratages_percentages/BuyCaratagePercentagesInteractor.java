@@ -21,5 +21,9 @@ public class BuyCaratagePercentagesInteractor {
         model.maximum().set(object.getMaximum());
         return object;
     }
+
+    public void updateSelected(String option){
+        service.updateSelected(option, model);
+    }
 }
    

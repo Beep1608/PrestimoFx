@@ -11,7 +11,7 @@ public class MetalPricesService {
     public MetalPricesObject getLast(){
         
            return session.createQuery(
-            "FROM metal_prices ORDER BY id DESC", MetalPricesObject.class)
+            "FROM MetalPricesObject ORDER BY id DESC", MetalPricesObject.class)
                         .setMaxResults(1)
                         .uniqueResult();
     }

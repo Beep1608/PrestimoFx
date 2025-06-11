@@ -36,5 +36,9 @@ public class MetalPricesModel {
         return currency_prices_id;
     }
 
+    @Override
+    public String toString(){
+        return "id : "+id +", metal: "+metal +", price_onz : " + price_onz +", price_gr: "+price_gr +", currency_prices_id: "+currency_prices_id;
+    }
     
 }

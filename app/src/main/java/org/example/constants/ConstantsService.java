@@ -12,7 +12,7 @@ public class ConstantsService {
     public ConstantsObject getLast(){
             
         return session.createQuery(
-        "FROM metal_prices ORDER BY id DESC", ConstantsObject.class)
+        "FROM ConstantsObject ORDER BY id DESC", ConstantsObject.class)
                     .setMaxResults(1)
                     .uniqueResult();
     }
