@@ -3,7 +3,6 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-import org.example.components.CustomLabeledComboBox;
 import org.example.view.FormView;
 
 import javafx.scene.control.Button;
@@ -64,7 +63,7 @@ public class BuyJewelryView extends FormView {
 
     private void addActionsToCalculateButton(){
         calculateButton.setOnMouseClicked(event -> {
-           
+            //actions.get("calculate").accept(null);
         });
     
     }
@@ -78,34 +77,6 @@ public class BuyJewelryView extends FormView {
     }
 
   
-
-
-    // TODO: Implementar la lógica para calcular los porcentajes
-    // Considerar añadir los porcentajes al modelo BuyJewelryModel y ser modificados por el combo
-    
-    private void configureBuyPercentages(CustomLabeledComboBox percentageCombo){
-        percentageCombo.getCombo().valueProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
-                String selectedPercentage = newValue.toString();
-                double percentageValue = 0.0;
-
-                switch (selectedPercentage) {
-                    case "Minimo":
-                      
-                        break;
-                    case "Medio":
-                        
-                        break;
-                    case "Maximo":
-                      
-                        break;
-                }
-                
-                System.out.println("Porcentaje seleccionado: " + selectedPercentage + " - Valor: " + percentageValue);
-            }
-        });
-
-    }
 
     
 }

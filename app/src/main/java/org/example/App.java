@@ -3,8 +3,13 @@
  */
 package org.example;
 
+import org.example.buy_caratages_percentages.BuyCaratagePercentagesObject;
+import org.example.buy_percentages.BuyPercentageObject;
+import org.example.constants.ConstantsObject;
+import org.example.currency_prices.CurrencyPricesObject;
 import org.example.dashboard.DashboardController;
 import org.example.jewelry.JewelryObject;
+import org.example.metal_prices.MetalPricesObject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -42,7 +47,13 @@ public class App extends Application {
 
     public static Session hibernate(){
         SessionFactory sessionFactory; 
-        var config = new Configuration().configure().addAnnotatedClass(JewelryObject.class);
+        var config = new Configuration().configure()
+        .addAnnotatedClass(JewelryObject.class)
+        .addAnnotatedClass(BuyPercentageObject.class)
+        .addAnnotatedClass(BuyCaratagePercentagesObject.class)
+        .addAnnotatedClass(MetalPricesObject.class)
+        .addAnnotatedClass(CurrencyPricesObject.class)
+        .addAnnotatedClass(ConstantsObject.class);
         sessionFactory = config.buildSessionFactory();
         return  sessionFactory.openSession();
     }

@@ -53,6 +53,7 @@ public class BuyJewelryController {
 
         
         actions.put("store", this::store);
+        //actions.put("calculate", this::calculate);
 
         this.view = new BuyJewelryView(
             model,
@@ -73,38 +74,68 @@ public class BuyJewelryController {
       
         jewelryController.store(null);
         JewelryModel jewelryModel = jewelryController.getModel();
-
+        System.out.println("Jewelry : "+ jewelryModel.metal());
         buyCaratagePercentagesController.getLast();
         BuyCaratagePercentagesModel buyCaratagePercentagesModel = buyCaratagePercentagesController.getModel();
-
+        System.out.println("Buy Caratage : "+ buyCaratagePercentagesModel.toString());
         buyPercentagesController.getLast();
         BuyPercentagesModel buyPercentagesModel = buyPercentagesController.getModel();
-        
+        System.out.println("Buy  : "+ buyPercentagesModel.toString());
         metalPricesController.getLast();
         MetalPricesModel metalPricesModel = metalPricesController.getModel();
-
+        System.out.println("MetalPrices  : "+ metalPricesModel.toString());
         constantsController.getLast();
         ConstantsModel constantsModel = constantsController.getModel();
+        System.out.println("Constants  : "+ constantsModel.toString());
 
-        // Task<Void> task = new Task<Void>() {
-        //     @Override
-        //     protected Void call() throws Exception {
+        //  Task<Void> task = new Task<Void>() {
+        //      @Override
+        //      protected Void call() throws Exception {
 
-        //         interactor.store();
-                
-        //         return null;
-        //     }
-        // };
+        //          //interactor.store();
+        //         // JewelryModel jewelryModel = jewelryController.getModel();
+        //         // System.out.println("Jewelry : "+ jewelryModel.metal());
 
-        // task.setOnSucceeded(evt -> {
-        //     System.out.println("Compra registrada exitosamente.");
-        // });
+        //         // buyCaratagePercentagesController.getLast();
+        //         // BuyCaratagePercentagesModel buyCaratagePercentagesModel = buyCaratagePercentagesController.getModel();
+        //         // System.out.println("Buy Caratage : "+ buyCaratagePercentagesModel.toString());
 
-        // Thread saveThread = new Thread(task);
-        // saveThread.start();
+        //         // buyPercentagesController.getLast();
+        //         // BuyPercentagesModel buyPercentagesModel = buyPercentagesController.getModel();
+        //         // System.out.println("Buy  : "+ buyPercentagesModel.toString());
+        //         // metalPricesController.getLast();
+        //         // MetalPricesModel metalPricesModel = metalPricesController.getModel();
+        //         // System.out.println("MetalPrices  : "+ metalPricesModel.toString());
+        //         // constantsController.getLast();
+        //         // ConstantsModel constantsModel = constantsController.getModel();
+        //         // System.out.println("Constants  : "+ constantsModel.toString());
+        //          return null;
+        //      }
+        //  };
+
+        //  task.setOnSucceeded(evt -> {
+        //      System.out.println("Compra registrada exitosamente.");
+        //  });
+
+        //  Thread saveThread = new Thread(task);
+        //  saveThread.start();
 
         
 
+    }
+
+    //TODO: Implementar logica de calculo de compra de joyería
+
+    private void calculate(
+        BuyCaratagePercentagesModel buyCaratagePercentagesModel,
+        BuyPercentagesModel buyPercentagesModel,
+        MetalPricesModel metalPricesModel,
+        ConstantsModel constantsModel
+    )
+    {
+
+        
+        
     }
 
 }

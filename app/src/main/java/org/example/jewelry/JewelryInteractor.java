@@ -15,10 +15,13 @@ public class JewelryInteractor {
 
     public void store() {
         System.out.println("Guardando joya...2");
-       domainObject = service.store(model.metal().get(),
-       model.caratage().get(), 
-       model.weight().get(), 
-       model.description().get());
+       domainObject = service.store(
+        model.metal().get(),
+        model.caratage().get(), 
+        model.weight().get(), 
+        model.description().get(),
+        model.image().get()
+       );
 
     }
 

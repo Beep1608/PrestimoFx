@@ -14,6 +14,7 @@ public class ConstantsInteractor {
 
     public void getLast(){
         this.object = service.getLast();
+        model.id().set(object.getId());
         model.conversion_factor().set(object.getConversion_factor());
         model.security_value().set(object.getSecurity_value());
         model.revenue_gr().set(object.getRevenue_gr());

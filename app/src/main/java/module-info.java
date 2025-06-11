@@ -23,4 +23,11 @@ module responsive {
 
   opens org.example to jakarta.persistence,  org.hibernate.orm.core;
   opens org.example.jewelry to jakarta.persistence, org.hibernate.orm.core;
+   opens  org.example.buy_jewelry to jakarta.persistence, org.hibernate.orm.core;
+  opens  org.example.buy_caratages_percentages to jakarta.persistence, org.hibernate.orm.core;
+  opens org.example.buy_percentages to jakarta.persistence, org.hibernate.orm.core;
+  opens  org.example.metal_prices to jakarta.persistence, org.hibernate.orm.core;
+  opens org.example.currency_prices to jakarta.persistence, org.hibernate.orm.core;
+  opens org.example.constants to jakarta.persistence, org.hibernate.orm.core;
+ 
 }

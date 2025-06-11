@@ -5,6 +5,8 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class BuyCaratagePercentagesModel {
 
@@ -15,10 +17,9 @@ public class BuyCaratagePercentagesModel {
     private final  SimpleDoubleProperty maximum  = new SimpleDoubleProperty();
 
     private final SimpleDoubleProperty selected = new SimpleDoubleProperty(0);
+    private final SimpleStringProperty selectedString = new SimpleStringProperty();
     
-    public BuyCaratagePercentagesModel(){
-        
-    }
+  
 
     public IntegerProperty id(){
         return  id;
@@ -38,6 +39,14 @@ public class BuyCaratagePercentagesModel {
 
     public DoubleProperty selected(){
         return  selected;
+    }
+
+    public StringProperty selectedString(){
+        return  selectedString;
+    }
+    @Override
+    public String toString(){
+        return "id : "+id +", minimum: "+minimum +", medium : " + medium +", maximum: "+maximum +" , selected: "+ selected;
     }
 
 }

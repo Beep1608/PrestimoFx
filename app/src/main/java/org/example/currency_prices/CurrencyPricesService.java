@@ -12,7 +12,7 @@ public class CurrencyPricesService {
 
     public CurrencyPricesObject getLast(){
                   return session.createQuery(
-            "FROM percentages_buy_caratage ORDER BY id DESC", CurrencyPricesObject.class)
+            "FROM CurrencyPricesObject ORDER BY id DESC", CurrencyPricesObject.class)
                         .setMaxResults(1)
                         .uniqueResult();
     }

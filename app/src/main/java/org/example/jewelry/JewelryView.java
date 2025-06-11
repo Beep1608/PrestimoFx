@@ -76,6 +76,8 @@ public class JewelryView implements Builder<Region> {
         previewButton.getStyleClass().add("preview-button");
         previewButton.setOnMouseClicked(event -> {
             imageForm.doPreview();
+            model.image().setValue(imageForm.getImage().getUrl());
+            System.out.println("Image url: "+ model.image().get());
         });
 
         
