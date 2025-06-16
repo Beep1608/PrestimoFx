@@ -14,7 +14,7 @@ public class JewelryInteractor {
     }
 
     public void store() {
-        System.out.println("Guardando joya...2");
+    
        domainObject = service.store(
         model.metal().get(),
         model.caratage().get(), 
@@ -22,6 +22,8 @@ public class JewelryInteractor {
         model.description().get(),
         model.image().get()
        );
+
+       model.id().set(domainObject.getId());
 
     }
 

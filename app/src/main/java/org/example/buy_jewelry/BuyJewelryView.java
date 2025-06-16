@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import org.example.view.FormView;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 
@@ -19,6 +20,7 @@ public class BuyJewelryView extends FormView {
     private final HashMap<String, Consumer<Void>> actions;
 
     private Button calculateButton;
+    private Label calculateLabel;
 
     
     public BuyJewelryView( 
@@ -57,8 +59,16 @@ public class BuyJewelryView extends FormView {
         calculateButton = new Button("Calcular");
         calculateButton.getStyleClass().add("calculate-button");
         buttonContainer.getChildren().add(calculateButton);
+        calculateLabel = new Label();
+        calculateLabel.textProperty().bind(model.max_purchase_amount().asString());
         addActionsToCalculateButton();
-        specialDataContainer.getContentContainer().getChildren().addAll(buyCaratagePercentagesView, buyPercentagesView, buttonContainer);
+        specialDataContainer
+        .getContentContainer()
+        .getChildren()
+        .addAll(buyCaratagePercentagesView, 
+        buyPercentagesView, 
+        calculateLabel,
+        buttonContainer);
     }
 
     private void addActionsToCalculateButton(){

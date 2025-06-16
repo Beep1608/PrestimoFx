@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS prestimo;
 CREATE DATABASE prestimo;
 
 DROP TABLE IF EXISTS metal_prices;
@@ -68,6 +69,7 @@ CREATE TABLE buys_jewelry (
     price_local_gr DOUBLE PRECISION,
     caratage_price DOUBLE PRECISION,
     caratage_price_final DOUBLE PRECISION,
+    caratage_price_final_pa DOUBLE PRECISION,
     price_gr_final DOUBLE PRECISION,
     max_purchase_amount DOUBLE PRECISION,
     percentage_buy_applied DOUBLE PRECISION,

@@ -10,7 +10,6 @@ public class BuyCaratagePercentagesService{
     }
 
     public BuyCaratagePercentagesObject getLast(){
-    
            return session.createQuery(
             "FROM BuyCaratagePercentagesObject ORDER BY id DESC", BuyCaratagePercentagesObject.class)
                         .setMaxResults(1)

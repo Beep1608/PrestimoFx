@@ -18,9 +18,9 @@ public class BuyJewelryObject {
     private double price_local_gr;
     private double caratage_price;
     private double caratage_price_final;
+    private double caratage_price_final_pa;
     private double price_gr_final;
     private double max_purchase_amount;
-    private String image;
     private double percentage_buy_applied;
     private double percentage_buy_caratage_applied;
     private int constants_id;
@@ -38,9 +38,9 @@ public class BuyJewelryObject {
         double price_local_gr,
         double caratage_price,
         double caratage_price_final,
+        double caratage_price_final_pa,
         double price_gr_final,
         double max_purchase_amount,
-        String image,
         double percentage_buy_applied,
         double percentage_buy_caratage_applied,
         int constants_id,
@@ -55,9 +55,9 @@ public class BuyJewelryObject {
         this.price_local_gr = price_local_gr;
         this.caratage_price = caratage_price;
         this.caratage_price_final = caratage_price_final;
+        this.caratage_price_final_pa = caratage_price_final_pa;
         this.price_gr_final = price_gr_final;
         this.max_purchase_amount = max_purchase_amount;
-        this.image = image;
         this.percentage_buy_applied = percentage_buy_applied;
         this.percentage_buy_caratage_applied = percentage_buy_caratage_applied;
         this.constants_id = constants_id;
@@ -115,6 +115,14 @@ public class BuyJewelryObject {
         this.caratage_price_final = caratage_price_final;
     }
 
+        public double getCaratage_price_final_pa() {
+        return caratage_price_final_pa;
+    }
+
+    public void setCaratage_price_final_pa(double caratage_price_final_pa) {
+        this.caratage_price_final_pa = caratage_price_final_pa;
+    }
+
     public double getPrice_gr_final() {
         return price_gr_final;
     }
@@ -129,14 +137,6 @@ public class BuyJewelryObject {
 
     public void setMax_purchase_amount(double max_purchase_amount) {
         this.max_purchase_amount = max_purchase_amount;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public double getPercentage_buy_applied() {
