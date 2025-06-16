@@ -33,23 +33,24 @@ public class JewelryController {
     //TODO: implementar logica de guardado
     public  void store(Void unused) {
         System.out.println("Guardando joya...");
-
-        Task<Void> task = new Task<Void>() {
-            @Override
-            protected Void call() throws Exception {
+         interactor.store();
                 
-                interactor.store();
+        // Task<Void> task = new Task<Void>() {
+        //     @Override
+        //     protected Void call() throws Exception {
                 
-                return null;
-            }
-        };
+        //         interactor.store();
+                
+        //         return null;
+        //     }
+        // };
 
-        task.setOnSucceeded(evt -> {
-            System.out.println("Joya registrada exitosamente.");
-        });
+        // task.setOnSucceeded(evt -> {
+        //     System.out.println("Joya registrada exitosamente.");
+        // });
 
-        Thread saveThread = new Thread(task);
-        saveThread.start();
+        // Thread saveThread = new Thread(task);
+        // saveThread.start();
     }
 
 

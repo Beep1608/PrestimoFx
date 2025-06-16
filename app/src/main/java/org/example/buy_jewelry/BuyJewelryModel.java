@@ -14,6 +14,7 @@ public class BuyJewelryModel {
     private final SimpleDoubleProperty price_local_gr = new SimpleDoubleProperty();
     private final SimpleDoubleProperty caratage_price = new SimpleDoubleProperty();
     private final SimpleDoubleProperty caratage_price_final = new SimpleDoubleProperty();
+    private final SimpleDoubleProperty caratage_price_final_pa = new SimpleDoubleProperty();
     private final SimpleDoubleProperty price_gr_final = new SimpleDoubleProperty();
     private final SimpleDoubleProperty max_purchase_amount = new SimpleDoubleProperty();
     private final SimpleStringProperty image = new SimpleStringProperty();
@@ -110,6 +111,10 @@ public class BuyJewelryModel {
 
     public DoubleProperty caratage_price_final(){
         return caratage_price_final;
+    }
+    
+    public DoubleProperty caratage_price_final_pa(){
+        return caratage_price_final_pa;
     }
 
     public DoubleProperty price_gr_final(){
