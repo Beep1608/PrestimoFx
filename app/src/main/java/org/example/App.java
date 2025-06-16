@@ -4,6 +4,7 @@
 package org.example;
 
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesObject;
+import org.example.buy_jewelry.BuyJewelryObject;
 import org.example.buy_percentages.BuyPercentageObject;
 import org.example.constants.ConstantsObject;
 import org.example.currency_prices.CurrencyPricesObject;
@@ -53,7 +54,8 @@ public class App extends Application {
         .addAnnotatedClass(BuyCaratagePercentagesObject.class)
         .addAnnotatedClass(MetalPricesObject.class)
         .addAnnotatedClass(CurrencyPricesObject.class)
-        .addAnnotatedClass(ConstantsObject.class);
+        .addAnnotatedClass(ConstantsObject.class)
+        .addAnnotatedClass(BuyJewelryObject.class);
         sessionFactory = config.buildSessionFactory();
         return  sessionFactory.openSession();
     }

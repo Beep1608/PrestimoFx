@@ -1,5 +1,10 @@
 package org.example.buy_jewelry;
 
+import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
+import org.example.buy_percentages.BuyPercentagesModel;
+import org.example.constants.ConstantsModel;
+import org.example.jewelry.JewelryModel;
+import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
 public class BuyJewelryInteractor {
@@ -31,6 +36,23 @@ public class BuyJewelryInteractor {
             model.percentages_caratage_id().get(),
             model.jewelry_id().get()
         ); 
+    }
+
+    public void calculate(
+        BuyJewelryModel model,
+        JewelryModel jewelryModel,
+        BuyCaratagePercentagesModel buyCaratagePercentagesModel,
+        BuyPercentagesModel buyPercentagesModel,
+        MetalPricesModel metalPricesModel,
+        ConstantsModel constantsModel
+    )
+    {
+        service.calculate(model, 
+        jewelryModel, 
+        buyCaratagePercentagesModel, 
+        buyPercentagesModel, 
+        metalPricesModel, 
+        constantsModel);
     }
 
     

@@ -15,7 +15,6 @@ public class JewelryService {
     public JewelryObject store(String metal, String caratage, double weight, String description, String image) {
         Transaction tx = null;
         JewelryObject jewelryObject = null;
-
         try {
             tx = session.beginTransaction();
             jewelryObject = new JewelryObject(

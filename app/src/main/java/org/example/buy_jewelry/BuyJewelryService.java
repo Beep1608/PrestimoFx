@@ -1,5 +1,10 @@
 package org.example.buy_jewelry;
 
+import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
+import org.example.buy_percentages.BuyPercentagesModel;
+import org.example.constants.ConstantsModel;
+import org.example.jewelry.JewelryModel;
+import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
 public class BuyJewelryService {
@@ -54,5 +59,117 @@ public class BuyJewelryService {
 
         return  object;
         
+    }
+
+    public void calculate(
+        BuyJewelryModel model,
+        JewelryModel jewelryModel,
+        BuyCaratagePercentagesModel buyCaratagePercentagesModel,
+        BuyPercentagesModel buyPercentagesModel,
+        MetalPricesModel metalPricesModel,
+        ConstantsModel constantsModel
+    )
+    {
+        /**
+         * Paso 1 
+         */
+
+         model.price_gr_inter().set(
+            metalPricesModel.price_onz()
+            .divide(constantsModel.conversion_factor())
+            .get()
+         );
+        
+         //---------
+
+        /**
+         *  Paso 2
+         */
+
+         model.revenue_extern_sale().set(
+            model.price_gr_inter()
+            .subtract(constantsModel.security_value())
+            .get()
+        );
+
+         //------------------
+
+         /**
+          * Paso 3
+          */
+        
+            model.price_local_gr().set(
+                model.revenue_extern_sale()
+                .subtract(constantsModel.revenue_gr())
+                .get()
+            );
+
+          //----------
+
+
+          /**
+           * Paso 4
+           */
+          model.caratage_price().set(
+            model.price_local_gr()
+            .divide(24)
+            .get()  
+          );
+
+           //-------------
+
+        /**
+         * Paso 5 
+         */
+        double caratage = Double.parseDouble( 
+            jewelryModel.caratage().get().replace("K", "")
+        );
+         model.caratage_price_final().set(
+            model.caratage_price()
+            .multiply(caratage)
+            .get()
+         );
+
+         model.caratage_price_final_pa().set(
+            model.caratage_price_final()
+            .multiply(buyCaratagePercentagesModel.selected())
+            .get()
+         );
+        
+         //---------
+
+         /**
+          * Paso 6
+          */
+          model.price_gr_final().set(
+            model.caratage_price_final_pa()
+            .multiply(jewelryModel.weight())
+            .get()
+          );
+          model.max_purchase_amount().set(
+            model.price_gr_final()
+            .multiply(buyPercentagesModel.selected())
+            .get()
+          );
+
+        model.percentage_buy_caratage_applied().set(
+            buyCaratagePercentagesModel
+            .selected()
+            .get()
+        );
+        model.percentage_buy_applied().set(
+            buyPercentagesModel
+            .selected()
+            .get()
+        );
+
+        //id's
+        model.constants_id().set(constantsModel.id().get());
+        model.metal_price_id().set(metalPricesModel.id().get());
+        model.percentages_buy_id().set(buyPercentagesModel.id().get());
+        model.percentage_buy_caratage_applied().set(buyCaratagePercentagesModel.id().get());
+        model.jewelry_id().set(jewelryModel.id().get());
+
+
     }
 }
