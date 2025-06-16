@@ -73,7 +73,7 @@ public class BuyJewelryView extends FormView {
 
     private void addActionsToCalculateButton(){
         calculateButton.setOnMouseClicked(event -> {
-            //actions.get("calculate").accept(null);
+            actions.get("calculate").accept(null);
         });
     
     }
