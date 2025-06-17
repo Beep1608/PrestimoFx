@@ -54,6 +54,8 @@ public class BuyJewelryController {
         
         actions.put("store", this::store);
         actions.put("calculate", this::calculate);
+       // actions.put("bindings", this::makeBindings);
+       
 
         this.view = new BuyJewelryView(
             model,
@@ -62,6 +64,7 @@ public class BuyJewelryController {
             buyCaratagePercentagesController.getView(),
             actions
         );
+       makeBindings();
 
     }
 
@@ -143,6 +146,20 @@ public class BuyJewelryController {
         buyPercentagesModel, 
         metalPricesModel, 
         constantsModel);
+    }
+
+    private void makeBindings(){
+        model.calculate().bind(
+            jewelryController.getModel().metal().isEmpty()
+            .or(jewelryController.getModel().caratage().isEmpty())
+            .or(jewelryController.getModel().image().isEmpty())
+            .or(jewelryController.getModel().weight().isEqualTo(0))
+            .or(jewelryController.getModel().description().isEmpty())
+            .or(buyPercentagesController.getModel().selected().isEqualTo(0))
+            .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
+            .not() // visible solo si todos los anteriores son falsos
+        );
+
     }
 
     //TODO: Implementar logica de calculo de compra de joyería

@@ -59,6 +59,7 @@ public class JewelryView implements Builder<Region> {
 
          caratageCombo.valueProperty().addListener((observable, oldValue, newValue) -> {
                  model.caratage().setValue((String) newValue);
+                 System.out.println("El kilataje es :" + newValue);
 
         });
 

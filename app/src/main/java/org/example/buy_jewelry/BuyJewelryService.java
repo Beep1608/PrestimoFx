@@ -51,7 +51,7 @@ public class BuyJewelryService {
             percentages_buy_caratage_id, 
             jewelry_id
         );
-
+        System.out.println(object);
         session.beginTransaction();
         session.persist(object);
         session.getTransaction().commit();
@@ -167,7 +167,7 @@ public class BuyJewelryService {
         model.constants_id().set(constantsModel.id().get());
         model.metal_price_id().set(metalPricesModel.id().get());
         model.percentages_buy_id().set(buyPercentagesModel.id().get());
-        model.percentage_buy_caratage_applied().set(buyCaratagePercentagesModel.id().get());
+        model.percentages_caratage_id().set(buyCaratagePercentagesModel.id().get());
         model.jewelry_id().set(jewelryModel.id().get());
 
 

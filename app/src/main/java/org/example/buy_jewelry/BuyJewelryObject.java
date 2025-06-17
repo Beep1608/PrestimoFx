@@ -196,5 +196,27 @@ public class BuyJewelryObject {
     }
 
 
+    @Override
+    public String toString() {
+        return "BuyJewelry {" +
+                "id=" + id +
+                ", price_gr_inter=" + price_gr_inter +
+                ", revenue_extern_sale=" + revenue_extern_sale +
+                ", price_local_gr=" + price_local_gr +
+                ", caratage_price=" + caratage_price +
+                ", caratage_price_final=" + caratage_price_final +
+                ", caratage_price_final_pa=" + caratage_price_final_pa +
+                ", price_gr_final=" + price_gr_final +
+                ", max_purchase_amount=" + max_purchase_amount +
+                ", percentage_buy_applied=" + percentage_buy_applied +
+                ", percentage_buy_caratage_applied=" + percentage_buy_caratage_applied +
+                ", constants_id=" + constants_id +
+                ", metal_price_id=" + metal_price_id +
+                ", percentages_buy_id=" + percentages_buy_id +
+                ", percentages_buy_caratage_id=" + percentages_buy_caratage_id +
+                ", jewelry_id=" + jewelry_id +
+                '}';
+    }
+
 
 }

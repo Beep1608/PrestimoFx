@@ -72,6 +72,7 @@ public class BuyJewelryView extends FormView {
     }
 
     private void addActionsToCalculateButton(){
+        calculateButton.visibleProperty().bind(model.calculate());
         calculateButton.setOnMouseClicked(event -> {
             actions.get("calculate").accept(null);
         });
@@ -80,6 +81,7 @@ public class BuyJewelryView extends FormView {
 
     @Override
     protected void addActionsToCreateButton() {
+        getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
         getCreateButton().setOnMouseClicked(event -> {
             System.out.println("Miau");
            actions.get("store").accept(null);
