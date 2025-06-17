@@ -19,6 +19,7 @@ public class BuyJewelryInteractor {
     }
 
     public void store() {
+        System.out.println("Aplicado : "+  model.percentage_buy_caratage_applied().get());
         this.object = service.store( 
             model.price_gr_inter().get(),
             model.revenue_extern_sale().get(),

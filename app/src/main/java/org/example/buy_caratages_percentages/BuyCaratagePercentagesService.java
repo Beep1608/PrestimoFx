@@ -17,7 +17,7 @@ public class BuyCaratagePercentagesService{
     }
 
     public void updateSelected(String option, BuyCaratagePercentagesModel model){
-
+         System.out.println("El minimo es: " + model.minimum().get());
         if(option.equals("Minimo")){
             model.selected().set(model.minimum().get());
         }
