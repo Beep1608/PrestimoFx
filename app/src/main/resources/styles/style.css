@@ -57,3 +57,10 @@
 .custom-text-area{
     
 }
+
+/**
+* Table View
+**/
+.table-view-container{
+    -fx-background-color: #00ff8c;
+}
