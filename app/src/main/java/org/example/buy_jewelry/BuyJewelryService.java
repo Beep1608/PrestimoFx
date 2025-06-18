@@ -61,6 +61,10 @@ public class BuyJewelryService {
         
     }
 
+    public void index(){
+        
+    }
+
     public void calculate(
         BuyJewelryModel model,
         JewelryModel jewelryModel,
