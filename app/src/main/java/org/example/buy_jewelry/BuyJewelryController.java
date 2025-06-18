@@ -15,6 +15,7 @@ import org.example.metal_prices.MetalPricesController;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
+import jakarta.persistence.criteria.CriteriaBuilder.In;
 import javafx.scene.layout.Region;
 
 public class BuyJewelryController {
@@ -22,7 +23,12 @@ public class BuyJewelryController {
    
     private final BuyJewelryModel model;
     private final BuyJewelryInteractor interactor;
-    private final BuyJewelryView view;
+    private final BuyJewelryView createView;
+    
+    //Index
+    private final BuyJewelryViewTable indexView; 
+
+
     private final  HashMap<String, Consumer<Void>> actions = new HashMap<>();
 
     //Controllers Required
@@ -57,19 +63,21 @@ public class BuyJewelryController {
        // actions.put("bindings", this::makeBindings);
        
 
-        this.view = new BuyJewelryView(
+        this.createView = new BuyJewelryView(
             model,
             jewelryController.getView(), 
             buyPercentagesController.getView(),
             buyCaratagePercentagesController.getView(),
             actions
         );
+
+        this.indexView = new BuyJewelryViewTable(model, actions);
        makeBindings();
 
     }
 
     public Region getView() {
-        return view.build();
+        return indexView.build();
     }
 
     //TODO: implementar logica de guardado
