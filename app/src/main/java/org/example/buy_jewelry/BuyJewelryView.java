@@ -2,6 +2,7 @@ package org.example.buy_jewelry;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import org.example.view.FormView;
 
@@ -17,7 +18,7 @@ public class BuyJewelryView extends FormView {
     private final  Region buyPercentagesView;
      private final  Region buyCaratagePercentagesView;
 
-    private final HashMap<String, Consumer<Void>> actions;
+    private final HashMap<String, Function<Object, Object>> actions;
 
     private Button calculateButton;
     private Label calculateLabel;
@@ -28,7 +29,7 @@ public class BuyJewelryView extends FormView {
         Region jewelryView,
         Region buyPercentagesView,
         Region buyCaratagePercentagesView,
-        HashMap<String, Consumer<Void>> actions
+        HashMap<String, Function<Object, Object>> actions
     ) 
     {
         super();
@@ -74,7 +75,7 @@ public class BuyJewelryView extends FormView {
     private void addActionsToCalculateButton(){
         calculateButton.visibleProperty().bind(model.calculate());
         calculateButton.setOnMouseClicked(event -> {
-            actions.get("calculate").accept(null);
+            actions.get("calculate").apply(event);
         });
     
     }
@@ -84,7 +85,7 @@ public class BuyJewelryView extends FormView {
         getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
         getCreateButton().setOnMouseClicked(event -> {
             System.out.println("Miau");
-           actions.get("store").accept(null);
+           actions.get("store").apply(null);
         });
     }
 

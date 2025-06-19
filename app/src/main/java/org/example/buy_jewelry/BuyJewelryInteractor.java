@@ -1,5 +1,7 @@
 package org.example.buy_jewelry;
 
+import java.util.List;
+
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
@@ -37,6 +39,10 @@ public class BuyJewelryInteractor {
             model.percentages_caratage_id().get(),
             model.jewelry_id().get()
         ); 
+    }
+
+    public List<BuyJewelryObject> index(){
+        return service.index();
     }
 
     public void calculate(
