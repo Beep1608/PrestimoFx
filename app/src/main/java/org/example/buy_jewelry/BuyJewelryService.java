@@ -1,5 +1,7 @@
 package org.example.buy_jewelry;
 
+import java.util.List;
+
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
@@ -61,10 +63,12 @@ public class BuyJewelryService {
         
     }
 
-    public void index(){
-        
+    public List<BuyJewelryObject> index() {
+        return session.createQuery(
+            "FROM BuyJewelryObject ORDER BY id DESC", 
+            BuyJewelryObject.class)
+            .getResultList();
     }
-
     public void calculate(
         BuyJewelryModel model,
         JewelryModel jewelryModel,

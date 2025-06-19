@@ -1,7 +1,9 @@
 package org.example.buy_jewelry;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
@@ -13,6 +15,7 @@ import org.example.jewelry.JewelryController;
 import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesController;
 import org.example.metal_prices.MetalPricesModel;
+import org.example.utils.ActionHandler;
 import org.hibernate.Session;
 
 import jakarta.persistence.criteria.CriteriaBuilder.In;
@@ -29,7 +32,7 @@ public class BuyJewelryController {
     private final BuyJewelryViewTable indexView; 
 
 
-    private final  HashMap<String, Consumer<Void>> actions = new HashMap<>();
+    private final  HashMap<String, Function<Object, Object>> actions = new HashMap<>();
 
     //Controllers Required
     private final JewelryController jewelryController;
@@ -61,6 +64,7 @@ public class BuyJewelryController {
         actions.put("store", this::store);
         actions.put("calculate", this::calculate);
        // actions.put("bindings", this::makeBindings);
+       actions.put("index", this::index);
        
 
         this.createView = new BuyJewelryView(
@@ -81,7 +85,7 @@ public class BuyJewelryController {
     }
 
     //TODO: implementar logica de guardado
-    private void store(Void unsed) {
+    private Object store(Object unsed) {
       
         jewelryController.store(null); 
         model.jewelry_id().set(
@@ -91,6 +95,7 @@ public class BuyJewelryController {
             .get()
         );  
         interactor.store();   
+        return null;
 
         //
         //  Task<Void> task = new Task<Void>() {
@@ -129,7 +134,7 @@ public class BuyJewelryController {
 
     }
 
-    private void calculate(Void unused){
+    private Object calculate(Object unused){
 
         
         JewelryModel jewelryModel = jewelryController.getModel();
@@ -154,6 +159,7 @@ public class BuyJewelryController {
         buyPercentagesModel, 
         metalPricesModel, 
         constantsModel);
+        return null;
     }
 
     private void makeBindings(){
@@ -168,6 +174,10 @@ public class BuyJewelryController {
             .not() // visible solo si todos los anteriores son falsos
         );
 
+    }
+
+    private List<BuyJewelryObject>  index(Object unused){
+        return interactor.index();
     }
 
     //TODO: Implementar logica de calculo de compra de joyería
