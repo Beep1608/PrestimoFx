@@ -1,9 +1,12 @@
 package org.example.view;
 
+import java.util.List;
+
 import org.example.buy_jewelry.BuyJewelryObject;
 import org.example.jewelry.JewelryObject;
 import org.example.utils.Responsive;
 
+import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
@@ -11,10 +14,10 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.util.Builder;
 
-public class TableView implements Builder<Region>{
+public abstract class TableView<T> implements Builder<Region>{
 
     private VBox container;
-    private javafx.scene.control.TableView table;
+    private javafx.scene.control.TableView<T> table;
 
     public TableView (){
        run();
@@ -44,15 +47,23 @@ public class TableView implements Builder<Region>{
     }
 
     private Node createTable(){
-        table = new javafx.scene.control.TableView();
-        TableColumn <BuyJewelryObject,Integer> id =new TableColumn<>("Id");
-        TableColumn <BuyJewelryObject,Integer> max_purchase_amount =new TableColumn<>("Monto de compra");
-        TableColumn <JewelryObject,Double> weight =new TableColumn<>("Peso");
-        TableColumn <JewelryObject,String> description =new TableColumn<>("Descripción");
+        table = new javafx.scene.control.TableView<>();
+       
         table.setColumnResizePolicy(javafx.scene.control.TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
-        table.getColumns().setAll(id,max_purchase_amount,weight,description);
+        table.getColumns().setAll(createColumns());
         Responsive.bindingToParent(table, 1, 1);
         return table;
     }
+
+    protected abstract java.util.List<TableColumn<T, ?>> createColumns();
+
+    protected javafx.scene.control.TableView<T> getTable(){
+        return table;
+    }
+
+    public void setData(List<T> data) {
+        getTable().setItems(FXCollections.observableArrayList(data));
+    }
+ 
     
 }
