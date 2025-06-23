@@ -31,6 +31,9 @@ public class BuyJewelryObject {
     public BuyJewelryObject() {
 
     }
+    public BuyJewelryObject(int id){
+        this.id =id;
+    }
 
     public BuyJewelryObject(
         double price_gr_inter,
