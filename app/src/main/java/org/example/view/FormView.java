@@ -18,12 +18,13 @@ public abstract class FormView implements Builder<Region> {
     protected FormContainer generalDataCotainer;
     protected FormContainer specialDataContainer;
 
+   
     //Create 
     private Button createButton;
     @Override
     public Region build() {
 
-        makeView(); 
+       
         scrollPane.setContent(mainContainer);
         scrollPane.setFitToWidth(true);
         scrollPane.getStyleClass().add("buy-scroll");
@@ -33,7 +34,7 @@ public abstract class FormView implements Builder<Region> {
     }
 
 
-    private void makeView() {
+    protected  void makeView() {
         mainContainer.getStyleClass().add("buy");
         mainContainer.setPadding(new Insets(20, 150, 10, 200));
         mainContainer.setSpacing(20);

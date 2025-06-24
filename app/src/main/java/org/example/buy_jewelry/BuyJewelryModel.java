@@ -11,6 +11,8 @@ import javafx.beans.property.StringProperty;
 
 public class BuyJewelryModel {
 
+    private final SimpleIntegerProperty id = new SimpleIntegerProperty(0);
+
     private final SimpleDoubleProperty price_gr_inter = new SimpleDoubleProperty(); // 1 
     private final SimpleDoubleProperty revenue_extern_sale = new SimpleDoubleProperty();
     private final SimpleDoubleProperty price_local_gr = new SimpleDoubleProperty();
@@ -31,8 +33,8 @@ public class BuyJewelryModel {
     private final SimpleBooleanProperty calculate = new SimpleBooleanProperty(false);
 
     private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
-    private final SimpleBooleanProperty create = new SimpleBooleanProperty(true);
-    private final SimpleBooleanProperty index = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty index = new SimpleBooleanProperty(true);
 
     public DoubleProperty price_gr_inter(){
         return  price_gr_inter;
@@ -111,5 +113,9 @@ public class BuyJewelryModel {
 
     public BooleanProperty index(){
         return  index;
+    }
+
+    public IntegerProperty id(){
+        return  id;
     }
 }

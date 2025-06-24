@@ -43,6 +43,9 @@ public class BuyJewelryInteractor {
             model.jewelry_id().get()
         ); 
     }
+    public void show(int id){
+        //TODO: Implementar logica para obtener la data de una compra en especifica
+    }
 
     public List<BuyJewelryIndex> index(){
         return service.index();
@@ -66,7 +69,33 @@ public class BuyJewelryInteractor {
     }
 
     public void makeViewsBindigns(BooleanProperty create, BooleanProperty edit, BooleanProperty index){
-        service.makeViewsBindigns(create, edit, index);
+        create.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                edit.set(false);
+                index.set(false);
+            }
+        });
+
+        edit.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                create.set(false);
+                index.set(false);
+            }
+        });
+
+        index.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                create.set(false);
+                edit.set(false);
+            }
+        });
+    }
+
+    private void loadDataToEdit(){
+
+        if(model.id().get() !=0){
+
+        }
     }
 
     

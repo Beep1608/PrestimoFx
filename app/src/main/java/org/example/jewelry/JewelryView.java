@@ -21,20 +21,21 @@ public class JewelryView implements Builder<Region> {
     private final JewelryModel model;
     private final HashMap<String, Consumer<Void>> actions;
 
-    private final VBox container = new VBox();
+    private  VBox container ;
     public JewelryView(JewelryModel model, HashMap<String, Consumer<Void>> actions) {
         this.model = model;
         this.actions = actions;
+        
     }
 
     @Override
     public Region build() {
-        createFields();
+        makeView();
         return container;
     }
 
-    public void createFields(){
-        
+    private  void makeView(){
+        container = new VBox();
         CustomComboBox comboBox = new CustomComboBox();
         Responsive.bindingToParentWidth(comboBox, 1);
         comboBox.getItems().addAll(MetalsEnum.GOLD.getValue(), 
