@@ -68,7 +68,9 @@ public class BuyJewelryIndexView extends TableView<BuyJewelryIndex> {
                         BuyJewelryIndex item = getTableView().getItems().get(getIndex());
                         
                         System.out.println("Editando: " + item.getId());
-                        model.create().set(true);
+                        model.id().set(item.getId());
+                        model.edit().set(true);
+                        
                     });
                 }
             

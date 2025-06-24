@@ -27,6 +27,8 @@ public class BuyJewelryController {
     //Main
     private final BuyJewelryView view;
 
+    //Edit
+    private final BuyJewelryEditView editView;
 
     //Create
     private final BuyJewelryCreateView createView;
@@ -78,9 +80,17 @@ public class BuyJewelryController {
             actions
         );
 
+         this.editView = new BuyJewelryEditView(
+            model,
+            jewelryController.getView(), 
+            buyPercentagesController.getView(),
+            buyCaratagePercentagesController.getView(),
+            actions
+        );
+
         this.indexView = new BuyJewelryIndexView(model, actions);
 
-        this.view = new BuyJewelryView(model, indexView.build(), createView.build());
+        this.view = new BuyJewelryView(model, indexView.build(), createView.build(),editView.build());
        makeBindings();
        makeViewsBindigns();
 
@@ -185,6 +195,7 @@ public class BuyJewelryController {
     private void makeViewsBindigns(){
         createView.build().visibleProperty().bind(model.create());
         indexView.build().visibleProperty().bind(model.index());
+        editView.build().visibleProperty().bind(model.edit());
         interactor.makeViewsBindigns(
             model.create(), 
             model.edit(), 

@@ -37,6 +37,7 @@ public class BuyJewelryCreateView extends FormView {
         this.buyPercentagesView = buyPercentagesView;
         this.buyCaratagePercentagesView = buyCaratagePercentagesView;
         this.actions = actions;
+       makeView();
         
     }
 

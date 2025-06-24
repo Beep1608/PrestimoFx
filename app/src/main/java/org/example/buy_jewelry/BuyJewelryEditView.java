@@ -37,17 +37,17 @@ public class BuyJewelryEditView extends FormView {
         this.buyPercentagesView = buyPercentagesView;
         this.buyCaratagePercentagesView = buyCaratagePercentagesView;
         this.actions = actions;
-        
+        makeView();
     }
 
     @Override
     protected void addFieldsToGeneralDataContainer() {
 
         generalDataCotainer.getContentContainer().setSpacing(10);
-        generalDataCotainer
-        .getContentContainer()
-        .getChildren()
-        .add(jewelryView);
+         generalDataCotainer
+         .getContentContainer()
+         .getChildren()
+         .add(jewelryView);
     }
 
     @Override

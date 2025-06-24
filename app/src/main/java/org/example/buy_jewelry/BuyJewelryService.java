@@ -10,8 +10,6 @@ import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
-import javafx.beans.property.BooleanProperty;
-
 public class BuyJewelryService {
 
     private Session session;
@@ -188,26 +186,6 @@ public class BuyJewelryService {
 
     }
 
-    public void makeViewsBindigns(BooleanProperty create, BooleanProperty edit, BooleanProperty index){
-        create.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                edit.set(false);
-                index.set(false);
-            }
-        });
 
-        edit.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                create.set(false);
-                index.set(false);
-            }
-        });
 
-        index.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                create.set(false);
-                edit.set(false);
-            }
-        });
-    }
 }

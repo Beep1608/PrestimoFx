@@ -9,9 +9,9 @@ public class BuyJewelryView implements Builder<Region>{
     private final StackPane container;
     private final BuyJewelryModel model;
 
-    public BuyJewelryView(BuyJewelryModel model,Region index, Region create){
+    public BuyJewelryView(BuyJewelryModel model,Region index, Region create,Region edit){
         this.model = model;
-        this.container = new StackPane(index,create);
+        this.container = new StackPane(index,create,edit);
         //container.setMouseTransparent(true);
 
     }
