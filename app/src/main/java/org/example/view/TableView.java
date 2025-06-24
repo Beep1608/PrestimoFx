@@ -1,12 +1,8 @@
 package org.example.view;
 
-import java.util.List;
-
-import org.example.buy_jewelry.BuyJewelryObject;
-import org.example.jewelry.JewelryObject;
 import org.example.utils.Responsive;
 
-import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
@@ -17,7 +13,7 @@ import javafx.util.Builder;
 public abstract class TableView<T> implements Builder<Region>{
 
     private VBox container;
-    private javafx.scene.control.TableView<T> table;
+    private  javafx.scene.control.TableView<T> table;
 
     public TableView (){
        run();
@@ -31,7 +27,7 @@ public abstract class TableView<T> implements Builder<Region>{
 
     private void run(){
         createContainer();
-        createTable();
+
     }
 
     private void createContainer(){
@@ -51,9 +47,13 @@ public abstract class TableView<T> implements Builder<Region>{
        
         table.setColumnResizePolicy(javafx.scene.control.TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
         table.getColumns().setAll(createColumns());
+
         Responsive.bindingToParent(table, 1, 1);
         return table;
     }
+
+  
+
 
     protected abstract java.util.List<TableColumn<T, ?>> createColumns();
 
@@ -61,8 +61,10 @@ public abstract class TableView<T> implements Builder<Region>{
         return table;
     }
 
-    public void setData(List<T> data) {
-        getTable().setItems(FXCollections.observableArrayList(data));
+    public void setData(ObservableList<T> data) {
+        table.setItems(data);
+        System.out.println(data.size());
+      
     }
  
     

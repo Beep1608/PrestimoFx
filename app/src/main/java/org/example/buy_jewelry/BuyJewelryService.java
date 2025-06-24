@@ -3,11 +3,14 @@ package org.example.buy_jewelry;
 import java.util.List;
 
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
+import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
 import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
+
+import javafx.beans.property.BooleanProperty;
 
 public class BuyJewelryService {
 
@@ -63,12 +66,16 @@ public class BuyJewelryService {
         
     }
 
-    public List<BuyJewelryObject> index() {
-        return session.createQuery(
-            "FROM BuyJewelryObject ORDER BY id DESC", 
-            BuyJewelryObject.class)
-            .getResultList();
+    public List<BuyJewelryIndex> index() {
+        String hql = "SELECT new org.example.buy_jewelry.dto.BuyJewelryIndex(" +
+             "b.id, b.max_purchase_amount, " +
+             "CAST(j.weight AS string), j.caratage, j.description) " +
+             "FROM BuyJewelryObject b JOIN b.jewelry j";
+        return  session
+                .createQuery(hql, BuyJewelryIndex.class)
+                .getResultList();
     }
+    
     public void calculate(
         BuyJewelryModel model,
         JewelryModel jewelryModel,
@@ -179,5 +186,28 @@ public class BuyJewelryService {
         model.jewelry_id().set(jewelryModel.id().get());
 
 
+    }
+
+    public void makeViewsBindigns(BooleanProperty create, BooleanProperty edit, BooleanProperty index){
+        create.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                edit.set(false);
+                index.set(false);
+            }
+        });
+
+        edit.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                create.set(false);
+                index.set(false);
+            }
+        });
+
+        index.addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                create.set(false);
+                edit.set(false);
+            }
+        });
     }
 }
