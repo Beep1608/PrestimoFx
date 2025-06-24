@@ -2,11 +2,11 @@ package org.example.buy_jewelry;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
+import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_percentages.BuyPercentagesController;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsController;
@@ -15,10 +15,8 @@ import org.example.jewelry.JewelryController;
 import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesController;
 import org.example.metal_prices.MetalPricesModel;
-import org.example.utils.ActionHandler;
 import org.hibernate.Session;
 
-import jakarta.persistence.criteria.CriteriaBuilder.In;
 import javafx.scene.layout.Region;
 
 public class BuyJewelryController {
@@ -26,10 +24,15 @@ public class BuyJewelryController {
    
     private final BuyJewelryModel model;
     private final BuyJewelryInteractor interactor;
-    private final BuyJewelryView createView;
+    //Main
+    private final BuyJewelryView view;
+
+
+    //Create
+    private final BuyJewelryCreateView createView;
     
     //Index
-    private final BuyJewelryViewTable indexView; 
+    private final BuyJewelryIndexView indexView; 
 
 
     private final  HashMap<String, Function<Object, Object>> actions = new HashMap<>();
@@ -67,7 +70,7 @@ public class BuyJewelryController {
        actions.put("index", this::index);
        
 
-        this.createView = new BuyJewelryView(
+        this.createView = new BuyJewelryCreateView(
             model,
             jewelryController.getView(), 
             buyPercentagesController.getView(),
@@ -75,13 +78,16 @@ public class BuyJewelryController {
             actions
         );
 
-        this.indexView = new BuyJewelryViewTable(model, actions);
+        this.indexView = new BuyJewelryIndexView(model, actions);
+
+        this.view = new BuyJewelryView(model, indexView.build(), createView.build());
        makeBindings();
+       makeViewsBindigns();
 
     }
 
     public Region getView() {
-        return indexView.build();
+        return view.build();
     }
 
     //TODO: implementar logica de guardado
@@ -176,7 +182,18 @@ public class BuyJewelryController {
 
     }
 
-    private List<BuyJewelryObject>  index(Object unused){
+    private void makeViewsBindigns(){
+        createView.build().visibleProperty().bind(model.create());
+        indexView.build().visibleProperty().bind(model.index());
+        interactor.makeViewsBindigns(
+            model.create(), 
+            model.edit(), 
+            model.index()
+        );
+
+    }
+
+    private List<BuyJewelryIndex>  index(Object unused){
         return interactor.index();
     }
 

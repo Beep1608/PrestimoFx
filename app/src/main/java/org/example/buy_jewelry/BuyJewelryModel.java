@@ -8,7 +8,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.ObservableList;
 
 public class BuyJewelryModel {
 
@@ -31,7 +30,9 @@ public class BuyJewelryModel {
 
     private final SimpleBooleanProperty calculate = new SimpleBooleanProperty(false);
 
-
+    private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty create = new SimpleBooleanProperty(true);
+    private final SimpleBooleanProperty index = new SimpleBooleanProperty(false);
 
     public DoubleProperty price_gr_inter(){
         return  price_gr_inter;
@@ -98,5 +99,17 @@ public class BuyJewelryModel {
 
     public BooleanProperty calculate(){
         return calculate;
+    }
+
+    public BooleanProperty create(){
+        return create;
+    }
+
+    public BooleanProperty edit(){
+        return  edit;
+    }
+
+    public BooleanProperty index(){
+        return  index;
     }
 }

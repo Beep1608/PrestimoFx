@@ -29,6 +29,7 @@ module responsive {
   opens  org.example.metal_prices to jakarta.persistence, org.hibernate.orm.core;
   opens org.example.currency_prices to jakarta.persistence, org.hibernate.orm.core;
   opens org.example.constants to jakarta.persistence, org.hibernate.orm.core;
+  opens  org.example.buy_jewelry.dto to jakarta.persistence, org.hibernate.orm.core,javafx.base;
 
  
 }

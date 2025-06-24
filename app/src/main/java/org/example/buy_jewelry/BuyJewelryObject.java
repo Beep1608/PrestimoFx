@@ -1,9 +1,13 @@
 package org.example.buy_jewelry;
 
+import org.example.jewelry.JewelryObject;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,12 +31,16 @@ public class BuyJewelryObject {
     private int metal_price_id;
     private int percentages_buy_id;
     private int percentages_buy_caratage_id;
-    private int jewelry_id;
+
+    @ManyToOne
+    @JoinColumn(name = "jewelry_id", insertable = false, updatable = false)
+    private JewelryObject jewelry;
+    
     public BuyJewelryObject() {
 
     }
-    public BuyJewelryObject(int id){
-        this.id =id;
+    public BuyJewelryObject(int constants_id){
+        this.constants_id =constants_id;
     }
 
     public BuyJewelryObject(
@@ -67,7 +75,7 @@ public class BuyJewelryObject {
         this.metal_price_id = metal_price_id;
         this.percentages_buy_id = percentages_buy_id;
         this.percentages_buy_caratage_id = percentages_buy_caratage_id;
-        this.jewelry_id = jewelry_id;
+        this.jewelry.setId(jewelry_id);
 
     }
     public int getId() {
@@ -191,11 +199,11 @@ public class BuyJewelryObject {
     }
 
     public int getJewelry_id() {
-        return jewelry_id;
+        return jewelry.getId();
     }
 
     public void setJewelry_id(int jewelry_id) {
-        this.jewelry_id = jewelry_id;
+        this.jewelry.setId( jewelry_id);
     }
 
 
@@ -217,7 +225,7 @@ public class BuyJewelryObject {
                 ", metal_price_id=" + metal_price_id +
                 ", percentages_buy_id=" + percentages_buy_id +
                 ", percentages_buy_caratage_id=" + percentages_buy_caratage_id +
-                ", jewelry_id=" + jewelry_id +
+                ", jewelry_id=" + jewelry.getId() +
                 '}';
     }
 

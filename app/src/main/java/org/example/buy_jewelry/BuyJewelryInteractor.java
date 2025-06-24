@@ -3,11 +3,14 @@ package org.example.buy_jewelry;
 import java.util.List;
 
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
+import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
 import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
+
+import javafx.beans.property.BooleanProperty;
 
 public class BuyJewelryInteractor {
 
@@ -41,7 +44,7 @@ public class BuyJewelryInteractor {
         ); 
     }
 
-    public List<BuyJewelryObject> index(){
+    public List<BuyJewelryIndex> index(){
         return service.index();
     }
 
@@ -60,6 +63,10 @@ public class BuyJewelryInteractor {
         buyPercentagesModel, 
         metalPricesModel, 
         constantsModel);
+    }
+
+    public void makeViewsBindigns(BooleanProperty create, BooleanProperty edit, BooleanProperty index){
+        service.makeViewsBindigns(create, edit, index);
     }
 
     
