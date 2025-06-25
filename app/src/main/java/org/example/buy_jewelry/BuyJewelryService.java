@@ -186,6 +186,15 @@ public class BuyJewelryService {
 
     }
 
+    public BuyJewelryObject findById(int id){
+
+        String query  = "from BuyJewelryObject where id = ?1";
+        return session.createSelectionQuery(query,BuyJewelryObject.class)
+                .setParameter(1, id)
+                .getSingleResult();
+
+    }
+
 
 
 }

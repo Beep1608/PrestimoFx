@@ -43,8 +43,8 @@ public class BuyJewelryInteractor {
             model.jewelry_id().get()
         ); 
     }
-    public void show(int id){
-        //TODO: Implementar logica para obtener la data de una compra en especifica
+    public BuyJewelryObject findById(int id){
+        return service.findById(id);
     }
 
     public List<BuyJewelryIndex> index(){
@@ -90,12 +90,12 @@ public class BuyJewelryInteractor {
             }
         });
     }
-
-    private void loadDataToEdit(){
-
-        if(model.id().get() !=0){
-
-        }
+    
+    public void show(int id){
+        BuyJewelryObject buy =  findById(id);
+        
+        model.max_purchase_amount().set(buy.getMax_purchase_amount());
+    
     }
 
     

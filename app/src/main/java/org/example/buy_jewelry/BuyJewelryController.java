@@ -70,6 +70,7 @@ public class BuyJewelryController {
         actions.put("calculate", this::calculate);
        // actions.put("bindings", this::makeBindings);
        actions.put("index", this::index);
+       actions.put("show", this::show);
        
 
         this.createView = new BuyJewelryCreateView(
@@ -169,12 +170,13 @@ public class BuyJewelryController {
 
 
         interactor.calculate(
-        model,
-        jewelryModel, 
-        buyCaratagePercentagesModel, 
-        buyPercentagesModel, 
-        metalPricesModel, 
-        constantsModel);
+            model,
+            jewelryModel, 
+            buyCaratagePercentagesModel, 
+            buyPercentagesModel, 
+            metalPricesModel, 
+            constantsModel
+        );
         return null;
     }
 
@@ -206,6 +208,13 @@ public class BuyJewelryController {
 
     private List<BuyJewelryIndex>  index(Object unused){
         return interactor.index();
+    }
+
+    private Object show(Object id){
+
+        interactor.show((Integer)id);
+
+        return null;
     }
 
     //TODO: Implementar logica de calculo de compra de joyería
