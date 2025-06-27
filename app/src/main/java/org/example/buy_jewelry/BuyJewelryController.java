@@ -68,9 +68,8 @@ public class BuyJewelryController {
         
         actions.put("store", this::store);
         actions.put("calculate", this::calculate);
-       // actions.put("bindings", this::makeBindings);
-       actions.put("index", this::index);
-       actions.put("show", this::show);
+        actions.put("index", this::index);
+        actions.put("show", this::show);
        
 
         this.createView = new BuyJewelryCreateView(
@@ -204,6 +203,10 @@ public class BuyJewelryController {
             model.index()
         );
 
+    }
+
+    private void makeEditViewBindings(){
+        //editView.
     }
 
     private List<BuyJewelryIndex>  index(Object unused){

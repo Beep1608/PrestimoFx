@@ -5,20 +5,25 @@ import java.util.function.Consumer;
 
 import org.hibernate.Session;
 
-import javafx.concurrent.Task;
 import javafx.scene.layout.Region;
 
 public class JewelryController {
     private final JewelryModel model;
     private final JewelryInteractor interactor;
     private final JewelryView view;
+  //  private final JewelryIndexView indexView;
+     private final JewelryCreateView createView;
+ //   private final JewelryEditView editView;
     private final  HashMap<String, Consumer<Void>> actions = new HashMap<>();
 
     public JewelryController(Session session) {
         this.model = new JewelryModel();
         this.interactor = new JewelryInteractor(model ,session);
         this.actions.put("store", this::store);
-        this.view = new JewelryView(model,actions);
+        this.createView = new JewelryCreateView(model,actions);
+       // this.editView = new JewelryEditView(model, actions);
+       // this.indexView = new JewelryIndexView();
+        this.view = new JewelryView(model, createView.build());
     }   
 
     
