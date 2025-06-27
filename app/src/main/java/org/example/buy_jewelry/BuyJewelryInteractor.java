@@ -95,7 +95,20 @@ public class BuyJewelryInteractor {
         BuyJewelryObject buy =  findById(id);
         
         model.max_purchase_amount().set(buy.getMax_purchase_amount());
-    
+        model.price_gr_inter().set(buy.getPrice_gr_inter());
+        model.revenue_extern_sale().set(buy.getRevenue_extern_sale());
+        model.price_local_gr().set(buy.getPrice_local_gr());
+        model.caratage_price().set(buy.getCaratage_price());
+        model.caratage_price_final_pa().set(buy.getCaratage_price_final_pa());
+        model.price_gr_final().set(buy.getPrice_gr_final());
+        model.percentage_buy_applied().set(buy.getPercentage_buy_applied());
+        model.percentage_buy_caratage_applied().set(buy.getPercentage_buy_caratage_applied());
+        model.metal_price_id().set(buy.getMetal_price_id());
+        model.percentages_buy_id().set(buy.getPercentages_buy_id());
+        model.percentages_caratage_id().set(buy.getPercentages_buy_caratage_id());
+        model.constants_id().set(buy.getConstants_id());
+        model.jewelry_id().set(buy.getJewelry_id());
+
     }
 
     

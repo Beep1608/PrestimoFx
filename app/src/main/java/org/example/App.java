@@ -34,7 +34,7 @@ public class App extends Application {
  
 
        
-
+    
         primaryStage.setMaximized(true);
         DashboardController controller = new DashboardController(hibernate());
         Scene scene = new Scene(controller.getView());

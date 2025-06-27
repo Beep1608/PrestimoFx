@@ -44,6 +44,8 @@ dependencies {
 
     implementation("org.postgresql:postgresql:42.7.6")
 
+    implementation(project(":jenvy:lib"))
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -66,6 +68,8 @@ application {
 tasks.withType<JavaExec> {
     jvmArgs("--add-reads", "org.jboss.logging=java.logging")
 }
+
+
 
 // add module information for all direct and transitive dependencies that are not modules
 // extraJavaModuleInfo {
