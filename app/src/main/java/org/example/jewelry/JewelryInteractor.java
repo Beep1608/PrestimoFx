@@ -27,6 +27,10 @@ public class JewelryInteractor {
 
     }
 
+    public void edit(Integer id){
+        
+    }
+
     
     
 }

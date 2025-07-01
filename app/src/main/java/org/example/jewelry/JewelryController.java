@@ -58,5 +58,9 @@ public class JewelryController {
         // saveThread.start();
     }
 
+    public void edit(Integer id){
+        interactor.edit(id);
+    }
+
 
 }
