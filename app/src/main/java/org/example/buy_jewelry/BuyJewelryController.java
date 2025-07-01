@@ -80,7 +80,7 @@ public class BuyJewelryController {
             actions
         );
 
-         this.editView = new BuyJewelryEditView(
+        this.editView = new BuyJewelryEditView(
             model,
             jewelryController.getView(), 
             buyPercentagesController.getView(),
@@ -148,6 +148,13 @@ public class BuyJewelryController {
 
         
 
+    }
+
+    public Object edit(Integer id){
+        jewelryController.edit();
+
+        model.id().set(id);
+        return null;
     }
 
     private Object calculate(Object unused){
