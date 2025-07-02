@@ -1,6 +1,8 @@
 package org.example.buy_jewelry.dto;
 
-public class BuyJewelryIndex {
+import org.jenvy.dto.Dto;
+
+public class BuyJewelryIndex extends Dto {
  
     private int id; //BuyJewelryObject
     private double amount;//BuyJewelryObject

@@ -16,6 +16,7 @@ import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesController;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
+import org.jenvy.controller.IndexController;
 
 import javafx.scene.layout.Region;
 
@@ -34,8 +35,8 @@ public class BuyJewelryController {
     private final BuyJewelryCreateView createView;
     
     //Index
-    private final BuyJewelryIndexView indexView; 
-
+    //private final BuyJewelryIndexView indexView; 
+    //private final IndexView indexView;
 
     private final  HashMap<String, Function<Object, Object>> actions = new HashMap<>();
 
@@ -45,6 +46,8 @@ public class BuyJewelryController {
     private final BuyCaratagePercentagesController buyCaratagePercentagesController;
     private final MetalPricesController metalPricesController;
     private final ConstantsController constantsController;
+
+    private final IndexController indexController;
 
 
     public BuyJewelryController(
@@ -88,9 +91,9 @@ public class BuyJewelryController {
             actions
         );
 
-        this.indexView = new BuyJewelryIndexView(model, actions);
-
-        this.view = new BuyJewelryView(model, indexView.build(), createView.build(),editView.build());
+       // this.indexView = new BuyJewelryIndexView(model, actions);
+        this.indexController = new BIndexController();
+        this.view = new BuyJewelryView(model, indexController.getView(), createView.build(),editView.build());
        makeBindings();
        makeViewsBindigns();
 
@@ -151,7 +154,7 @@ public class BuyJewelryController {
     }
 
     public Object edit(Integer id){
-        jewelryController.edit();
+       // jewelryController.edit();
 
         model.id().set(id);
         return null;
@@ -202,7 +205,7 @@ public class BuyJewelryController {
 
     private void makeViewsBindigns(){
         createView.build().visibleProperty().bind(model.create());
-        indexView.build().visibleProperty().bind(model.index());
+        indexController.getView().visibleProperty().bind(model.index());
         editView.build().visibleProperty().bind(model.edit());
         interactor.makeViewsBindigns(
             model.create(), 
