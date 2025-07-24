@@ -21,12 +21,12 @@ import javafx.util.Builder;
 
 public class JewelryEditView implements Builder<Region> {
     private final JewelryModel model;
-    private final HashMap<String, Consumer<Void>> actions;
+    private final JewelryInteractor interactor;
 
     private  VBox container ;
-    public JewelryEditView(JewelryModel model, HashMap<String, Consumer<Void>> actions) {
+    public JewelryEditView(JewelryModel model,JewelryInteractor interactor) {
         this.model = model;
-        this.actions = actions;
+        this.interactor = interactor;
         
     }
 
@@ -45,11 +45,8 @@ public class JewelryEditView implements Builder<Region> {
         comboBox.setPromptText("Seleccione un metal");
 
         //Bindeo de propiedades de la vista con el modelo
-        bindData(comboBox.valueProperty(), model.metal());
-        comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            model.metal().setValue((String) newValue);
-
-        });
+        //bindData(comboBox.valueProperty(), model.metal());
+        comboBox.valueProperty().bindBidirectional(model.metal());
 
 
         CustomComboBox caratageCombo = new CustomComboBox();
@@ -118,6 +115,7 @@ public class JewelryEditView implements Builder<Region> {
             if(modelProperty.getValue().equals(null) || modelProperty.getValue().equals(0)){
                 System.out.println("Vacío o Zero");
             }
+            viewProperty.set(modelProperty);
     }
     
 }

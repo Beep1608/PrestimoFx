@@ -13,7 +13,7 @@ public class JewelryController {
     private final JewelryView view;
   //  private final JewelryIndexView indexView;
      private final JewelryCreateView createView;
- //   private final JewelryEditView editView;
+     private final JewelryEditView editView;
     private final  HashMap<String, Consumer<Void>> actions = new HashMap<>();
 
     public JewelryController(Session session) {
@@ -21,7 +21,7 @@ public class JewelryController {
         this.interactor = new JewelryInteractor(model ,session);
         this.actions.put("store", this::store);
         this.createView = new JewelryCreateView(model,actions);
-       // this.editView = new JewelryEditView(model, actions);
+       this.editView = new JewelryEditView(model, interactor);
        // this.indexView = new JewelryIndexView();
         this.view = new JewelryView(model, createView.build());
     }   
@@ -34,6 +34,11 @@ public class JewelryController {
     public JewelryModel getModel(){
         return  model;
     }
+
+    public JewelryInteractor getInteractor(){
+        return interactor;
+    }
+
 
     //TODO: implementar logica de guardado
     public  void store(Void unused) {

@@ -9,7 +9,7 @@ public class JewelryView implements Builder<Region> {
     private final StackPane container;
     private final JewelryModel model;
   
-    public JewelryView(JewelryModel model,Region create){
+    public JewelryView(JewelryModel model,Region create, Region edit){
 
         this.model = model;
         this.container = new StackPane(create);

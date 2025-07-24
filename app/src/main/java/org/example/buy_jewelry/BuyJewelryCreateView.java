@@ -3,6 +3,7 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Function;
 
+import org.example.buy_percentages.BuyPercentagesInteractor;
 import org.example.view.FormView;
 
 import javafx.scene.control.Button;
@@ -12,23 +13,22 @@ import javafx.scene.layout.Region;
 
 public class BuyJewelryCreateView extends FormView {
     private final BuyJewelryModel model;
+    private final BuyJewelryInteractor interactor;
 
     private final Region jewelryView;
     private final  Region buyPercentagesView;
      private final  Region buyCaratagePercentagesView;
-
-    private final HashMap<String, Function<Object, Object>> actions;
 
     private Button calculateButton;
     private Label calculateLabel;
 
     
     public BuyJewelryCreateView( 
-        BuyJewelryModel model, 
+        BuyJewelryModel model,
+        BuyJewelryInteractor interactor,
         Region jewelryView,
         Region buyPercentagesView,
-        Region buyCaratagePercentagesView,
-        HashMap<String, Function<Object, Object>> actions
+        Region buyCaratagePercentagesView
     ) 
     {
         super();
@@ -36,7 +36,7 @@ public class BuyJewelryCreateView extends FormView {
         this.jewelryView = jewelryView;
         this.buyPercentagesView = buyPercentagesView;
         this.buyCaratagePercentagesView = buyCaratagePercentagesView;
-        this.actions = actions;
+        this.interactor = interactor;
        makeView();
         
     }
@@ -75,7 +75,7 @@ public class BuyJewelryCreateView extends FormView {
     private void addActionsToCalculateButton(){
         calculateButton.visibleProperty().bind(model.calculate());
         calculateButton.setOnMouseClicked(event -> {
-            actions.get("calculate").apply(event);
+            interactor.calculate();
         });
     
     }
@@ -85,7 +85,7 @@ public class BuyJewelryCreateView extends FormView {
         getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
         getCreateButton().setOnMouseClicked(event -> {
             System.out.println("Miau");
-           actions.get("store").apply(null);
+           interactor.store();
         });
     }
 
