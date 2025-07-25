@@ -4,7 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="" />
+    <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryCreateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryCreateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/ImageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/components/ImageContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryCreateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryCreateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryEditView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/utils/FilesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/utils/FilesFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/view/FormView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/view/FormView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/CreateView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/CreateView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/DashboardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/DashboardView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/EditView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/EditView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/IndexView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/IndexView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/ShowView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/ShowView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/FormView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/FormView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/CreateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/CreateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/EditView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/EditView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/IndexView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/IndexView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/ShowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/ShowView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/View.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +106,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/Users/fidel.zarcoa/Documents/Java/PrestimoFx/PrestimoFx/app/src/main/java/org/example/jewelry/show"
   }
 }]]></component>

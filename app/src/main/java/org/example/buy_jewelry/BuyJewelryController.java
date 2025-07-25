@@ -3,6 +3,7 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Function;
 
+import javafx.beans.binding.Bindings;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
 import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_jewelry.index.BuyJewelryIndexModel;
@@ -22,9 +23,6 @@ public class BuyJewelryController {
     private final BuyJewelryInteractor interactor;
     //Main
     private final BuyJewelryView view;
-
-    //Edit
-    private final BuyJewelryEditView editView;
 
     //Create
     private final BuyJewelryCreateView createView;
@@ -63,7 +61,7 @@ public class BuyJewelryController {
 
         this.interactor = new BuyJewelryInteractor(model,
                 session,
-                jewelryController.getModel(),
+                jewelryController,
                 buyCaratagePercentagesController.getModel(),
                 buyPercentagesController.getModel(),
                 metalPricesController.getModel(),
@@ -79,21 +77,14 @@ public class BuyJewelryController {
             buyCaratagePercentagesController.getView()
         );
 
-        this.editView = new BuyJewelryEditView(
-            model,
-            jewelryController.getView(), 
-            buyPercentagesController.getView(),
-            buyCaratagePercentagesController.getView(),
-            actions
-        );
-
         this.indexModel = new BuyJewelryIndexModel();
         this.indexView = new BuyJewelryIndexView(indexModel, interactor);
 
-        this.view = new BuyJewelryView(model, indexView.build(), createView.build(),editView.build());
-       makeBindings();
+        this.view = new BuyJewelryView(model, indexView.build(), createView.build());
+       createBindings();
+       createListeners();
+       createActions();
 
-       actions();
 
     }
 
@@ -104,7 +95,7 @@ public class BuyJewelryController {
 
 
 
-    private void makeBindings(){
+    private void createBindings(){
         model.calculate().bind(
             jewelryController.getModel().metal().isEmpty()
             .or(jewelryController.getModel().caratage().isEmpty())
@@ -116,27 +107,69 @@ public class BuyJewelryController {
             .not() // visible solo si todos los anteriores son falsos
         );
 
-        createView.build().visibleProperty().bind(model.create());
+        createView.build().visibleProperty().bind(Bindings.or(model.create(),model.edit()));
         indexView.build().visibleProperty().bind(model.index());
-        editView.build().visibleProperty().bind(model.edit());
-        interactor.makeViewsBindigns(
-                model.create(),
-                model.edit(),
-                model.index()
-        );
 
+    }
+
+    private void createListeners(){
+        model.edit().addListener((observable, oldValue, newValue) ->{
+            if(newValue){
+                model.create().set(false);
+                model.index().set(false);
+                model.currentAction().set("Editar");
+                //BuyJewelryObject buy = interactor.findById(indexModel.selectedItem().get().getId());
+                interactor.loadDataToEdit(indexModel.selectedItem().get().getId());
+
+                jewelryController.getModel().id().set(model.jewelry_id().get());
+                jewelryController.getModel().edit().set(true);
+
+                buyCaratagePercentagesController.getModel().id().set(model.percentages_caratage_id().get());
+                buyCaratagePercentagesController.getModel().selected().set(model.percentage_buy_caratage_applied().get());
+                buyCaratagePercentagesController.getModel().edit().set(true);
+
+                buyPercentagesController.getModel().id().set(model.percentages_buy_id().get());
+                buyPercentagesController.getModel().selected().set(model.percentage_buy_applied().get());
+                buyPercentagesController.getModel().edit().set(true);
+
+                constantsController.getModel().id().set(model.constants_id().get());
+                constantsController.getModel().edit().set(true);
+
+                metalPricesController.getModel().id().set(model.metal_price_id().get());
+                metalPricesController.getModel().edit().set(true);
+
+                System.out.println("Modelo de porcentaje de compra: "+ buyPercentagesController.getModel().minimum().get());
+            }
+        });
+
+        model.create().addListener((observable, oldValue, newValue) ->{
+            if(newValue){
+
+                model.index().set(false);
+                model.edit().set(false);
+                model.currentAction().set("Crear");
+                jewelryController.getModel().create().set(true);
+            }
+        });
+
+        model.index().addListener((observable, oldValue, newValue) ->{
+            if(newValue){
+                model.create().set(false);
+                model.edit().set(false);
+
+            }
+        });
     }
 
 
 
-    private void actions(){
+    private void createActions(){
         indexView.getEditButton().setOnAction(evt->{
             model.edit().set(true);
-            System.out.println(indexModel.selectedItem().get().getId());
-            BuyJewelryObject buy = interactor.findById(indexModel.selectedItem().get().getId());
-            jewelryController.getInteractor().loadDataToEdit(buy.getJewelry_id());
+        });
 
-            System.out.println("JOYA . "+ jewelryController.getModel().id());
+        indexView.getCreateButton().setOnAction(event -> {
+            model.create().set(true);
         });
     }
 

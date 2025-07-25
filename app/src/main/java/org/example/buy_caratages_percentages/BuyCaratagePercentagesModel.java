@@ -1,12 +1,7 @@
 package org.example.buy_caratages_percentages;
 
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class BuyCaratagePercentagesModel {
 
@@ -18,8 +13,11 @@ public class BuyCaratagePercentagesModel {
 
     private final SimpleDoubleProperty selected = new SimpleDoubleProperty(0);
     private final SimpleStringProperty selectedString = new SimpleStringProperty();
-    
-  
+
+
+    private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty index = new SimpleBooleanProperty(false);
 
     public IntegerProperty id(){
         return  id;
@@ -43,6 +41,18 @@ public class BuyCaratagePercentagesModel {
 
     public StringProperty selectedString(){
         return  selectedString;
+    }
+
+    public BooleanProperty create(){
+        return create;
+    }
+
+    public BooleanProperty edit(){
+        return  edit;
+    }
+
+    public BooleanProperty index(){
+        return  index;
     }
     @Override
     public String toString(){

@@ -3,13 +3,15 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Function;
 
+import javafx.beans.binding.Bindings;
 import org.example.buy_percentages.BuyPercentagesInteractor;
-import org.example.view.FormView;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import org.jenvy.components.FormView;
+import org.jenvy.model.Model;
 
 public class BuyJewelryCreateView extends FormView {
     private final BuyJewelryModel model;
@@ -38,6 +40,7 @@ public class BuyJewelryCreateView extends FormView {
         this.buyCaratagePercentagesView = buyCaratagePercentagesView;
         this.interactor = interactor;
        makeView();
+       createBindigs();
         
     }
 
@@ -82,14 +85,28 @@ public class BuyJewelryCreateView extends FormView {
 
     @Override
     protected void addActionsToCreateButton() {
-        getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
+       // getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
         getCreateButton().setOnMouseClicked(event -> {
-            System.out.println("Miau");
-           interactor.store();
+            if(model.create().get()){
+                interactor.store();
+            }
+           if(model.edit().get()){
+               System.out.println("Usted esta editando");
+               interactor.edit();
+           }
+
         });
     }
 
-  
+    @Override
+    protected void addActionsToBackButton() {
+        interactor.index();
+        model.index().set(true);
+    }
 
-    
+    private void createBindigs(){
+        createButton.textProperty().bind(model.currentAction());
+    }
+
+
 }

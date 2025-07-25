@@ -50,6 +50,17 @@ public class ImageContainer extends FormContainer {
         }
     }
 
+    public void doPreviewEdit(String path){
+        try {
+            File file = new File(path);
+            Image image = new Image(file.toURI().toString());
+            imageView.setImage(image);
+        }catch (Exception e){
+            System.out.println("No pudimos obtener la imagen :" +path);
+        }
+
+    }
+
     public void stopPreview() {
         imageView.setImage(null);
     }

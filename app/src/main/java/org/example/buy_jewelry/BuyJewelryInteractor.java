@@ -6,6 +6,7 @@ import org.example.buy_caratages_percentages.BuyCaratagePercentagesModel;
 import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
+import org.example.jewelry.JewelryController;
 import org.example.jewelry.JewelryModel;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
@@ -15,10 +16,11 @@ import javafx.beans.property.BooleanProperty;
 public class BuyJewelryInteractor {
 
     private final BuyJewelryModel model;
+    private BuyJewelryObject object;
 
     //Dendencies
     private Session session;
-    private JewelryModel jewelryModel;
+    private JewelryController jewelryController;
     private BuyCaratagePercentagesModel buyCaratagePercentagesModel;
     private BuyPercentagesModel buyPercentagesModel;
     private MetalPricesModel metalPricesModel;
@@ -27,7 +29,7 @@ public class BuyJewelryInteractor {
     public BuyJewelryInteractor(
             BuyJewelryModel model,
             Session session,
-            JewelryModel jewelryModel,
+            JewelryController jewelryController,
             BuyCaratagePercentagesModel buyCaratagePercentagesModel,
             BuyPercentagesModel buyPercentagesModel,
             MetalPricesModel metalPricesModel,
@@ -35,7 +37,7 @@ public class BuyJewelryInteractor {
     {
         this.model = model;
         this.session = session;
-        this.jewelryModel = jewelryModel;
+        this.jewelryController = jewelryController;
         this.buyCaratagePercentagesModel = buyCaratagePercentagesModel;
         this.buyPercentagesModel = buyPercentagesModel;
         this.metalPricesModel = metalPricesModel;
@@ -66,6 +68,42 @@ public class BuyJewelryInteractor {
         session.persist(object);
         session.getTransaction().commit();
         return  object;
+    }
+
+    public void edit(){
+        System.out.println("Editando joya.....");
+        jewelryController.getInteractor().edit();
+        try{
+            session.beginTransaction();
+            object = session.getReference(BuyJewelryObject.class,model.id().get());
+            if(object == null){
+                System.out.println("Compra no encontrada con ID: " + model.id().get());
+            }
+            System.out.println("Compra : "+ object.getId());
+
+            object.setPrice_gr_final(model.price_gr_inter().get());
+            object.setRevenue_extern_sale( model.revenue_extern_sale().get());
+            object.setPrice_local_gr( model.price_local_gr().get());
+            object.setCaratage_price( model.caratage_price().get());
+            object.setCaratage_price_final(model.caratage_price_final().get());
+            object.setCaratage_price_final_pa(model.caratage_price_final_pa().get());
+            object.setPrice_gr_final(model.price_gr_final().get());
+            object.setMax_purchase_amount(model.max_purchase_amount().get());
+            object.setPercentage_buy_applied(model.percentage_buy_applied().get());
+            object.setPercentage_buy_caratage_applied(model.percentage_buy_caratage_applied().get());
+            object.setConstants_id(model.constants_id().get());
+            object.setMetal_price_id( model.metal_price_id().get());
+            object.setPercentages_buy_id(model.percentages_buy_id().get());
+            object.setPercentages_buy_caratage_id(model.percentages_caratage_id().get());
+            object.setJewelry_id(model.jewelry_id().get());
+
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            System.out.println("No se pudo actualizar la compra con ID : "+model.id().get());
+            e.printStackTrace();
+        }
+
     }
     public BuyJewelryObject findById(int id){
 
@@ -141,7 +179,7 @@ public class BuyJewelryInteractor {
 
 
         double caratage = Double.parseDouble(
-                jewelryModel.caratage().get().replace("K", "")
+                jewelryController.getModel().caratage().get().replace("K", "")
         );
         model.caratage_price_final().set(
                 model.caratage_price()
@@ -162,7 +200,7 @@ public class BuyJewelryInteractor {
          */
         model.price_gr_final().set(
                 model.caratage_price_final_pa()
-                        .multiply(jewelryModel.weight())
+                        .multiply(jewelryController.getModel().weight())
                         .get()
         );
         model.max_purchase_amount().set(
@@ -187,32 +225,10 @@ public class BuyJewelryInteractor {
         model.metal_price_id().set(metalPricesModel.id().get());
         model.percentages_buy_id().set(buyPercentagesModel.id().get());
         model.percentages_caratage_id().set(buyCaratagePercentagesModel.id().get());
-        model.jewelry_id().set(jewelryModel.id().get());
+        model.jewelry_id().set(jewelryController.getModel().id().get());
 
     }
 
-    public void makeViewsBindigns(BooleanProperty create, BooleanProperty edit, BooleanProperty index){
-        create.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                edit.set(false);
-                index.set(false);
-            }
-        });
-
-        edit.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                create.set(false);
-                index.set(false);
-            }
-        });
-
-        index.addListener((obs, oldVal, newVal) -> {
-            if (newVal) {
-                create.set(false);
-                edit.set(false);
-            }
-        });
-    }
     
     public void show(int id){
         BuyJewelryObject buy =  findById(id);
@@ -234,8 +250,23 @@ public class BuyJewelryInteractor {
 
     }
 
-    private void loadDataToEdit(){
-
+    public void loadDataToEdit(int id){
+        BuyJewelryObject buy =  findById(id);
+        model.id().set(buy.getId());
+        model.max_purchase_amount().set(buy.getMax_purchase_amount());
+        model.price_gr_inter().set(buy.getPrice_gr_inter());
+        model.revenue_extern_sale().set(buy.getRevenue_extern_sale());
+        model.price_local_gr().set(buy.getPrice_local_gr());
+        model.caratage_price().set(buy.getCaratage_price());
+        model.caratage_price_final_pa().set(buy.getCaratage_price_final_pa());
+        model.price_gr_final().set(buy.getPrice_gr_final());
+        model.percentage_buy_applied().set(buy.getPercentage_buy_applied());
+        model.percentage_buy_caratage_applied().set(buy.getPercentage_buy_caratage_applied());
+        model.metal_price_id().set(buy.getMetal_price_id());
+        model.percentages_buy_id().set(buy.getPercentages_buy_id());
+        model.percentages_caratage_id().set(buy.getPercentages_buy_caratage_id());
+        model.constants_id().set(buy.getConstants_id());
+        model.jewelry_id().set(buy.getJewelry_id());
     }
 
     

@@ -3,6 +3,7 @@ package org.example.jewelry;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
+import javafx.util.converter.NumberStringConverter;
 import org.example.components.CustomComboBox;
 import org.example.components.CustomTextArea;
 import org.example.components.CustomTextField;
@@ -19,22 +20,27 @@ import javafx.util.Builder;
 
 public class JewelryCreateView implements Builder<Region> {
     private final JewelryModel model;
-    private final HashMap<String, Consumer<Void>> actions;
+    private final JewelryInteractor interactor;
 
     private  VBox container ;
-    public JewelryCreateView(JewelryModel model, HashMap<String, Consumer<Void>> actions) {
+
+
+    public JewelryCreateView(JewelryModel model, JewelryInteractor interactor) {
         this.model = model;
-        this.actions = actions;
-        
+        this.interactor = interactor;
+        makeView();
     }
 
     @Override
     public Region build() {
-        makeView();
         return container;
     }
 
     private  void makeView(){
+        Button back = new Button("Regresar");
+        back.setOnAction(event -> {
+            model.index().set(true);
+        });
         container = new VBox();
         CustomComboBox comboBox = new CustomComboBox();
         Responsive.bindingToParentWidth(comboBox, 1);
@@ -42,10 +48,7 @@ public class JewelryCreateView implements Builder<Region> {
                                     MetalsEnum.SILVER.getValue());
         comboBox.setPromptText("Seleccione un metal");
 
-        comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            model.metal().setValue((String) newValue);
-
-        });
+        comboBox.valueProperty().bindBidirectional(model.metal());
 
 
         CustomComboBox caratageCombo = new CustomComboBox();
@@ -58,11 +61,7 @@ public class JewelryCreateView implements Builder<Region> {
                                         CaratagesEnum.CARATAGE_24.getValue());
         caratageCombo.setPromptText("Seleccione un kilataje");
 
-         caratageCombo.valueProperty().addListener((observable, oldValue, newValue) -> {
-                 model.caratage().setValue((String) newValue);
-                 System.out.println("El kilataje es :" + newValue);
-
-        });
+         caratageCombo.valueProperty().bindBidirectional(model.caratage());
 
         VBox imageContainer = new VBox();
         imageContainer.setSpacing(10);
@@ -73,7 +72,11 @@ public class JewelryCreateView implements Builder<Region> {
         .getPath(), 280);
 
         HBox imageButtonsContainer = new HBox();
-
+        model.image().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null || !newValue.equals("")){
+                imageForm.doPreviewEdit(model.image().get());
+            }
+        });
         Button previewButton = new Button("Añadir Imagen");
         previewButton.getStyleClass().add("preview-button");
         previewButton.setOnMouseClicked(event -> {
@@ -89,19 +92,13 @@ public class JewelryCreateView implements Builder<Region> {
         CustomTextField weigthField = new CustomTextField();
         Responsive.bindingToParentWidth(weigthField, 1);
         weigthField.setPromptText("Ingrese la cantidad en gramos");
-        weigthField.textProperty().addListener((observable, oldValue, newValue) -> {
-            
-            model.weight().setValue(Double.parseDouble(newValue));
-          
-        });
+        weigthField.textProperty().bindBidirectional(model.weight(), new NumberStringConverter());
 
         CustomTextArea descriptionField = new CustomTextArea();
         descriptionField.setPromptText("Ingrese una descripción de la joya");
         descriptionField.setMinHeight(100);
         Responsive.bindingToParentWidth(descriptionField, 1);
-        descriptionField.textProperty().addListener((observable, oldValue, newValue) -> {
-            model.description().setValue(newValue);
-        });
+        descriptionField.textProperty().bindBidirectional(model.description());
 
 
         container.setSpacing(5);

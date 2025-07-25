@@ -9,6 +9,7 @@ public class MetalPricesController {
     public MetalPricesController(Session session){
         this.model = new MetalPricesModel();
         this.interactor = new MetalPricesInteractor(model, session);
+        createListeners();
     }
 
     public MetalPricesModel getModel(){
@@ -17,6 +18,14 @@ public class MetalPricesController {
 
     public void getLast(){
         interactor.getLast();
+    }
+
+    public void createListeners(){
+        model.edit().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                interactor.loadDataToEdit();
+            }
+        });
     }
 
     

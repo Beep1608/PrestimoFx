@@ -36,6 +36,8 @@ public class BuyJewelryModel {
     private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);
     private final SimpleBooleanProperty index = new SimpleBooleanProperty(true);
 
+    private final SimpleStringProperty currentAction = new SimpleStringProperty("");
+
     public DoubleProperty price_gr_inter(){
         return  price_gr_inter;
     }
@@ -117,5 +119,9 @@ public class BuyJewelryModel {
 
     public IntegerProperty id(){
         return  id;
+    }
+
+    public StringProperty currentAction(){
+        return currentAction;
     }
 }

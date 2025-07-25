@@ -11,19 +11,20 @@ import javafx.util.Builder;
 public class BuyPercentageView implements  Builder<Region> {
 
     private final BuyPercentagesModel model;
-    private final  HashMap<String, Runnable> actions ;
+    private final BuyPercentagesInteractor interactor;
 
     private CustomLabeledComboBox comboBox;
 
-    public BuyPercentageView(BuyPercentagesModel model, HashMap<String, Runnable>  actions ){
+    public BuyPercentageView(BuyPercentagesModel model,BuyPercentagesInteractor interactor){
         this.model = model;
-        this.actions = actions;
+        this.interactor = interactor;
+        createCombo();
     }
 
 
     @Override
     public Region build() {
-        createCombo();
+
         return comboBox;
     }
     public String getComboValue(){
@@ -39,11 +40,22 @@ public class BuyPercentageView implements  Builder<Region> {
 
     
      private void configureCombo(){
+        comboBox.getCombo().valueProperty().bindBidirectional(model.selectedString());
        comboBox.getCombo().valueProperty().addListener((obsVal, oldVal, newVal)->{
-            System.out.println(newVal.toString());
-            model.selectedString().set(newVal.toString());
-            actions.get("getLast").run();
-            actions.get("updateSelected").run();
+
+           if(model.create().get()){
+               System.out.println(newVal.toString());
+               model.selectedString().set(newVal.toString());
+               interactor.getLast();
+               interactor.updateSelected();
+           }
+
+
+           if(model.edit().get()){
+               model.selectedString().set(newVal.toString());
+               interactor.updateSelected();
+           }
+
        });
     }
 

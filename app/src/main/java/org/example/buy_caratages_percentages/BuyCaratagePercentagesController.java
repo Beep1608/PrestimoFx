@@ -12,14 +12,13 @@ public class BuyCaratagePercentagesController{
     private final BuyCaratagePercentagesModel model;
     private final BuyCaratagePercentagesInteractor interactor;
     private final BuyCaratagePercentagesView view;
-    private final  HashMap<String, Runnable> actions = new HashMap<>();
+
     public BuyCaratagePercentagesController(Session session){
         this.model = new BuyCaratagePercentagesModel();
         this.interactor = new BuyCaratagePercentagesInteractor(model, session);
-        actions.put("getLast", this::getLast);
-        actions.put("updateSelected", this::updateSelected);
-        this.view = new BuyCaratagePercentagesView(model, actions);
-        //createListeners();
+
+        this.view = new BuyCaratagePercentagesView(model, interactor);
+        createListeners();
     }
 
     public Region getView(){
@@ -31,13 +30,20 @@ public class BuyCaratagePercentagesController{
         return model;
     }
 
-    public void getLast(){
-        interactor.getLast();
+
+    public void createListeners(){
+        model.edit().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                interactor.loadDataToEdit();
+            }
+        });
+
+        model.create().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                interactor.clean();
+            }
+        });
     }
 
-    public void updateSelected(){
-        interactor.updateSelected(model.selectedString().get());
-    }
 
-    
 }

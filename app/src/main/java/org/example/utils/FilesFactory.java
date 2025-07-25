@@ -23,8 +23,8 @@ public class FilesFactory {
         File sourceFile;
         try {
             // Convertir la URI string de vuelta a un objeto File
-            sourceFile = new File(new java.net.URI(sourceFilePath));
-        } catch (URISyntaxException e) {
+            sourceFile = new File(sourceFilePath);
+        } catch (Exception e) {
             System.err.println("Error de sintaxis URI para el archivo de origen: " + e.getMessage());
             e.printStackTrace();
             return null; // Retorna null en caso de error de sintaxis URI
