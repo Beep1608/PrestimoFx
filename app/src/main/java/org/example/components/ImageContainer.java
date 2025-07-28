@@ -1,6 +1,7 @@
 package org.example.components;
 
 import java.io.File;
+import java.net.URI;
 
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -52,7 +53,14 @@ public class ImageContainer extends FormContainer {
 
     public void doPreviewEdit(String path){
         try {
-            File file = new File(path);
+            File file;
+            if (path.startsWith("file:")) {
+                URI uri = URI.create(path);
+                file = new File(uri);
+            } else {
+                file = new File(path);
+            }
+
             Image image = new Image(file.toURI().toString());
             imageView.setImage(image);
         }catch (Exception e){

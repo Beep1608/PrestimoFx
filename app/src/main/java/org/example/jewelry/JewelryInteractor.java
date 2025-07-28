@@ -64,7 +64,8 @@ public class JewelryInteractor {
 
             if (model.image().get() != null || !model.image().get().equals("")) {
                 String newImagePath = FilesFactory.copyLocalFile(model.image().get(), destination).getAbsolutePath();
-                object.setImage(model.image().get());
+                object.setImage(newImagePath);
+                System.out.println("Imagen en el interactor : "+ newImagePath);
             }
 
             session.getTransaction().commit();

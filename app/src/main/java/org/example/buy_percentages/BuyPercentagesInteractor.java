@@ -16,15 +16,23 @@ public class BuyPercentagesInteractor {
 
     public BuyPercentageObject getLast(){
 
-        return session.createQuery(
+        this.object = session.createQuery(
                         "FROM BuyPercentageObject ORDER BY id DESC", BuyPercentageObject.class)
                 .setMaxResults(1)
                 .uniqueResult();
+
+        model.id().set(object.getId());
+        model.minimum().set(object.getMinimum());
+        model.medium().set(object.getMedium());
+        model.maximum().set(object.getMaximum());
+        return object;
     }
      public void updateSelected(){
         var option = model.selectedString().get();
+         System.out.println("Actualizando model: "+ model.selectedString());
          if(option.equals("Minimo")){
              model.selected().set(model.minimum().get());
+             System.out.println(model.selected());
          }
 
          if(option.equals("Medio")){

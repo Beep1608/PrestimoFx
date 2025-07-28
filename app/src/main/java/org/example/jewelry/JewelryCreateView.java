@@ -23,6 +23,7 @@ public class JewelryCreateView implements Builder<Region> {
     private final JewelryInteractor interactor;
 
     private  VBox container ;
+    ImageContainer imageForm;
 
 
     public JewelryCreateView(JewelryModel model, JewelryInteractor interactor) {
@@ -66,15 +67,19 @@ public class JewelryCreateView implements Builder<Region> {
         VBox imageContainer = new VBox();
         imageContainer.setSpacing(10);
 
-        ImageContainer imageForm = new ImageContainer("",
+         imageForm = new ImageContainer("",
         getClass()
         .getResource("/img/right-arrow.png")
         .getPath(), 280);
 
         HBox imageButtonsContainer = new HBox();
         model.image().addListener((observable, oldValue, newValue) -> {
-            if(newValue != null || !newValue.equals("")){
-                imageForm.doPreviewEdit(model.image().get());
+
+            if(newValue != null ){
+                if(!newValue.isEmpty()){
+                    System.out.println("Imagen :"+model.image().get());
+                    imageForm.doPreviewEdit(model.image().get());
+                }
             }
         });
         Button previewButton = new Button("Añadir Imagen");
@@ -104,6 +109,10 @@ public class JewelryCreateView implements Builder<Region> {
         container.setSpacing(5);
         container.getChildren().addAll(comboBox, caratageCombo, imageContainer, weigthField, descriptionField);
 
+    }
+
+    public ImageContainer imageForm(){
+        return imageForm;
     }
 
 

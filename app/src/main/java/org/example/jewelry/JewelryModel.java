@@ -62,6 +62,4 @@ public class JewelryModel  {
         return edit;
     }
 
-
-
 }

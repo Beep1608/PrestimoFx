@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.function.Function;
 
 import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
 import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_jewelry.index.BuyJewelryIndexModel;
@@ -96,16 +97,25 @@ public class BuyJewelryController {
 
 
     private void createBindings(){
-        model.calculate().bind(
-            jewelryController.getModel().metal().isEmpty()
-            .or(jewelryController.getModel().caratage().isEmpty())
-            .or(jewelryController.getModel().image().isEmpty())
-            .or(jewelryController.getModel().weight().isEqualTo(0))
-            .or(jewelryController.getModel().description().isEmpty())
-            .or(buyPercentagesController.getModel().selected().isEqualTo(0))
-            .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
-            .not() // visible solo si todos los anteriores son falsos
+       //model.calculate().bind(
+       //    jewelryController.getModel().metal().isEmpty()
+       //    .or(jewelryController.getModel().caratage().isEmpty())
+       //    .or(jewelryController.getModel().image().isEmpty())
+       //    .or(jewelryController.getModel().weight().isEqualTo(0))
+       //    .or(jewelryController.getModel().description().isEmpty())
+       //    .or(buyPercentagesController.getModel().selected().isEqualTo(0))
+       //    .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
+       //    .not() // visible solo si todos los anteriores son falsos
+       //);
+        createView.getCalculateButton().disableProperty().bind(
+                jewelryController.getModel().metal().isEmpty()
+                .or(jewelryController.getModel().caratage().isEmpty())
+                .or(jewelryController.getModel().weight().isEqualTo(0))
+                .or(buyPercentagesController.getModel().selected().isEqualTo(0))
+                .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
+                .not()
         );
+
 
         createView.build().visibleProperty().bind(Bindings.or(model.create(),model.edit()));
         indexView.build().visibleProperty().bind(model.index());
@@ -149,14 +159,72 @@ public class BuyJewelryController {
                 model.edit().set(false);
                 model.currentAction().set("Crear");
                 jewelryController.getModel().create().set(true);
+                constantsController.getModel().create().set(true);
+                metalPricesController.getModel().create().set(true);
+                buyPercentagesController.getModel().create().set(true);
+                buyCaratagePercentagesController.getModel().create().set(true);
             }
         });
 
         model.index().addListener((observable, oldValue, newValue) ->{
             if(newValue){
+                indexModel.items().set(FXCollections.observableArrayList( interactor.index()));
                 model.create().set(false);
                 model.edit().set(false);
 
+            }
+        });
+
+        jewelryController.getModel().metal().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                if(!newValue.equals(oldValue)){
+                    model.calculate().set(true);
+                }
+            }else{
+                model.calculate().set(true);
+            }
+
+        });
+
+        jewelryController.getModel().caratage().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                if(!newValue.equals(oldValue)){
+                    model.calculate().set(true);
+                }
+            }else{
+                model.calculate().set(true);
+            }
+
+        });
+
+        jewelryController.getModel().weight().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                if(!newValue.equals(oldValue)){
+                    model.calculate().set(true);
+                }
+            }else{
+                model.calculate().set(true);
+            }
+
+        });
+
+        buyPercentagesController.getModel().selected().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                if(!newValue.equals(oldValue)){
+                    model.calculate().set(true);
+                }
+            }else{
+                model.calculate().set(true);
+            }
+        });
+
+        buyCaratagePercentagesController.getModel().selected().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                if(!newValue.equals(oldValue)){
+                    model.calculate().set(true);
+                }
+            }else{
+                model.calculate().set(true);
             }
         });
     }

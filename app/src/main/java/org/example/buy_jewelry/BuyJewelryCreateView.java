@@ -76,8 +76,9 @@ public class BuyJewelryCreateView extends FormView {
     }
 
     private void addActionsToCalculateButton(){
-        calculateButton.visibleProperty().bind(model.calculate());
+        //calculateButton.visibleProperty().bind(model.calculate());
         calculateButton.setOnMouseClicked(event -> {
+            model.calculate().set(false);
             interactor.calculate();
         });
     
@@ -100,13 +101,20 @@ public class BuyJewelryCreateView extends FormView {
 
     @Override
     protected void addActionsToBackButton() {
-        interactor.index();
+
         model.index().set(true);
+
     }
 
     private void createBindigs(){
+        createButton.disableProperty().bind(model.calculate());
         createButton.textProperty().bind(model.currentAction());
     }
+
+    public Button getCalculateButton(){
+        return calculateButton;
+    }
+
 
 
 }

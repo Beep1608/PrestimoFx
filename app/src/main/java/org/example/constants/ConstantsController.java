@@ -19,13 +19,15 @@ public class ConstantsController {
     public void createListeners(){
         model.edit().addListener((observable, oldValue, newValue) -> {
             if(newValue){
+                model.create().set(false);
                 interactor.loadDataToEdit();
             }
         });
 
         model.create().addListener((observable, oldValue, newValue) -> {
             if(newValue){
-                System.out.println("Creación de constantes");
+                model.edit().set(false);
+               interactor.getLast();
             }
         });
     }

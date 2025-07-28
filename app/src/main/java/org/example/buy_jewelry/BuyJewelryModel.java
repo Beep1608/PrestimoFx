@@ -30,7 +30,7 @@ public class BuyJewelryModel {
     private final SimpleIntegerProperty contants_id = new SimpleIntegerProperty();
     private final SimpleIntegerProperty jewelry_id = new SimpleIntegerProperty();
 
-    private final SimpleBooleanProperty calculate = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty calculate = new SimpleBooleanProperty(true);
 
     private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
     private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);

@@ -30,9 +30,11 @@ public class BuyCaratagePercentagesInteractor {
     }
 
     public void updateSelected(){
+        System.out.println("Actualizando model: "+ model.selectedString());
         var option = model.selectedString().get();
         if(option.equals("Minimo")){
             model.selected().set(model.minimum().get());
+            System.out.println(model.selected());
         }
 
         if(option.equals("Medio")){

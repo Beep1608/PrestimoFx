@@ -43,10 +43,12 @@ public class BuyCaratagePercentagesView implements  Builder<Region> {
         comboBox.getCombo().valueProperty().bindBidirectional(model.selectedString());
        comboBox.getCombo().valueProperty().addListener((obsVal, oldVal, newVal)->{
            if(model.create().get()){
-               System.out.println(newVal.toString());
-               model.selectedString().set(newVal.toString());
-               interactor.getLast();
-               interactor.updateSelected();
+               if(newVal != null){
+                   System.out.println(newVal.toString());
+                   model.selectedString().set(newVal.toString());
+                   interactor.getLast();
+                   interactor.updateSelected();
+               }
            }
 
            if(model.edit().get()){

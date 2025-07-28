@@ -117,10 +117,17 @@ public class BuyJewelryInteractor {
         String hql = "SELECT new org.example.buy_jewelry.dto.BuyJewelryIndex(" +
                 "b.id, b.max_purchase_amount, " +
                 "CAST(j.weight AS string), j.caratage, j.description) " +
-                "FROM BuyJewelryObject b JOIN b.jewelry j";
-        return  session
+                "FROM BuyJewelryObject b JOIN b.jewelry j " +
+                "ORDER BY b.id ASC";
+        var lista =  session
                 .createQuery(hql, BuyJewelryIndex.class)
                 .getResultList();
+        for (var item : lista){
+            System.out.println("Item :"+ item.getWeight());
+        }
+
+
+        return  lista;
     }
 
     public void calculate()
@@ -135,6 +142,10 @@ public class BuyJewelryInteractor {
                         .get()
         );
 
+        System.out.println("Paso [1]: "+ constantsModel.conversion_factor());
+        System.out.println("Paso [1]: "+ metalPricesModel.price_onz());
+        System.out.println("Paso [1]: "+ model.price_gr_inter());
+
         //---------
 
         /**
@@ -146,6 +157,9 @@ public class BuyJewelryInteractor {
                         .subtract(constantsModel.security_value())
                         .get()
         );
+        System.out.println("Paso [2]: "+ constantsModel.security_value());
+        System.out.println("Paso [2]: "+ model.price_gr_inter());
+        System.out.println("Paso [2]: "+ model.revenue_extern_sale());
 
         //------------------
 
@@ -158,6 +172,9 @@ public class BuyJewelryInteractor {
                         .subtract(constantsModel.revenue_gr())
                         .get()
         );
+        System.out.println("Paso [3]: "+ constantsModel.revenue_gr());
+        System.out.println("Paso [3]: "+  model.revenue_extern_sale());
+        System.out.println("Paso [3]: "+  model.price_local_gr());
 
         //----------
 
@@ -170,6 +187,9 @@ public class BuyJewelryInteractor {
                         .divide(24)
                         .get()
         );
+
+        System.out.println("Paso [4]: "+  model.price_local_gr());
+        System.out.println("Paso [4]: "+  model.caratage_price());
 
         //-------------
 
@@ -192,6 +212,12 @@ public class BuyJewelryInteractor {
                         .multiply(buyCaratagePercentagesModel.selected())
                         .get()
         );
+        System.out.println("Paso [5]: "+ model.caratage_price());
+        System.out.println("Paso [5]: "+   model.caratage_price_final());
+        System.out.println("Paso [5]: "+  caratage);
+        System.out.println("Paso [5]: "+ buyCaratagePercentagesModel.selected());
+        System.out.println("Paso [5]: "+   model.caratage_price_final());
+        System.out.println("Paso [5]: "+  model.caratage_price_final_pa());
 
         //---------
 
@@ -220,6 +246,21 @@ public class BuyJewelryInteractor {
                         .get()
         );
 
+        System.out.println("Paso [6]: "+ jewelryController.getModel().weight());
+        System.out.println("Paso [6]: "+   model.caratage_price_final_pa());
+        System.out.println("Paso [6]: "+  model.price_gr_final());
+        System.out.println("Paso [6] buyPercentagesModel: "+ buyPercentagesModel.selected());
+        System.out.println("Paso [6]: "+   model.price_gr_final());
+        System.out.println("Paso [6]: "+   model.max_purchase_amount());
+
+        System.out.println("Paso [6]: "+  buyCaratagePercentagesModel
+                .selected());
+        System.out.println("Paso [6]: "+    model.percentage_buy_caratage_applied());
+        System.out.println("Paso [6]: "+   buyPercentagesModel
+                .selected());
+        System.out.println("Paso [6]: "+    model.percentage_buy_applied());
+
+        System.out.println("Max amount purchase: "+ model.max_purchase_amount() );
         //id's
         model.constants_id().set(constantsModel.id().get());
         model.metal_price_id().set(metalPricesModel.id().get());

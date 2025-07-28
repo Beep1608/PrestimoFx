@@ -32,13 +32,20 @@ public class BuyPercentagesController{
     public void createListeners(){
         model.edit().addListener((observable, oldValue, newValue) -> {
                 if(newValue){
+                    model.create().set(false);
+                    model.index().set(false);
                     interactor.loadDataToEdit();
                 }
         });
 
         model.create().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Limpiando");
             if(newValue){
+                model.edit().set(false);
+                model.index().set(false);
                 interactor.clean();
+                interactor.getLast();
+                System.out.println("Obteniendo percentages");
             }
         });
     }

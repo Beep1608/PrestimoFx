@@ -55,6 +55,7 @@ public class JewelryController {
 
                try{
                 interactor.clean();
+                createView.imageForm.stopPreview();
                }catch (Exception e){
                    System.out.println("Lo sentimos pero el modelo no puede limpiarse.");
                }
