@@ -1,11 +1,6 @@
 package org.example.metal_prices;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class MetalPricesModel {
 
@@ -15,6 +10,9 @@ public class MetalPricesModel {
     private final SimpleDoubleProperty price_onz  = new SimpleDoubleProperty();
     private final SimpleDoubleProperty price_gr  = new SimpleDoubleProperty();
     private final SimpleIntegerProperty currency_prices_id = new SimpleIntegerProperty();
+    private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty index = new SimpleBooleanProperty(false);
 
     public IntegerProperty id(){
         return  id;
@@ -35,6 +33,19 @@ public class MetalPricesModel {
     public IntegerProperty currency_prices_id(){
         return currency_prices_id;
     }
+
+    public BooleanProperty create(){
+        return create;
+    }
+
+    public BooleanProperty edit(){
+        return  edit;
+    }
+
+    public BooleanProperty index(){
+        return  index;
+    }
+
 
     @Override
     public String toString(){

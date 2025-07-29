@@ -3,6 +3,7 @@ package org.example.jewelry;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
+import javafx.beans.binding.Bindings;
 import org.hibernate.Session;
 
 import javafx.scene.layout.Region;
@@ -13,17 +14,16 @@ public class JewelryController {
     private final JewelryView view;
   //  private final JewelryIndexView indexView;
      private final JewelryCreateView createView;
- //   private final JewelryEditView editView;
-    private final  HashMap<String, Consumer<Void>> actions = new HashMap<>();
 
     public JewelryController(Session session) {
         this.model = new JewelryModel();
         this.interactor = new JewelryInteractor(model ,session);
-        this.actions.put("store", this::store);
-        this.createView = new JewelryCreateView(model,actions);
-       // this.editView = new JewelryEditView(model, actions);
+        this.createView = new JewelryCreateView(model,interactor);
        // this.indexView = new JewelryIndexView();
         this.view = new JewelryView(model, createView.build());
+
+        createBindings();
+        createListeners();
     }   
 
     
@@ -35,32 +35,58 @@ public class JewelryController {
         return  model;
     }
 
-    //TODO: implementar logica de guardado
-    public  void store(Void unused) {
-        System.out.println("Guardando joya...");
-         interactor.store();
-                
-        // Task<Void> task = new Task<Void>() {
-        //     @Override
-        //     protected Void call() throws Exception {
-                
-        //         interactor.store();
-                
-        //         return null;
-        //     }
-        // };
-
-        // task.setOnSucceeded(evt -> {
-        //     System.out.println("Joya registrada exitosamente.");
-        // });
-
-        // Thread saveThread = new Thread(task);
-        // saveThread.start();
+    public JewelryInteractor getInteractor(){
+        return interactor;
     }
 
-    public void edit(Integer id){
-        interactor.edit(id);
+    protected void createBindings(){
+        createView.build().visibleProperty().bind(
+                Bindings.or(model.create(), model.edit())
+        );
+
     }
+
+    protected void createListeners(){
+
+        model.create().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+               model.index().set(false);
+               model.edit().set(false);
+
+               try{
+                   System.out.println("Limpiando joyería");
+                interactor.clean();
+                createView.imageForm.stopPreview();
+               }catch (Exception e){
+                   System.out.println("Lo sentimos pero el modelo no puede limpiarse.");
+               }
+
+            }
+        });
+
+        model.edit().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                model.create().set(false);
+                model.index().set(false);
+                try {
+                    interactor.loadDataToEdit(model.id().get());
+                }catch (Exception e){
+                    System.out.println("Lo sentimos pero el modelo no tiene un id.");
+                }
+
+            }
+        });
+
+        model.index().addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                model.create().set(false);
+                model.edit().set(false);
+            }
+        });
+    }
+
+
+
 
 
 }

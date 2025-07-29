@@ -3,32 +3,34 @@ package org.example.buy_jewelry;
 import java.util.HashMap;
 import java.util.function.Function;
 
-import org.example.view.FormView;
+import javafx.beans.binding.Bindings;
+import org.example.buy_percentages.BuyPercentagesInteractor;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import org.jenvy.components.FormView;
+import org.jenvy.model.Model;
 
 public class BuyJewelryCreateView extends FormView {
     private final BuyJewelryModel model;
+    private final BuyJewelryInteractor interactor;
 
     private final Region jewelryView;
     private final  Region buyPercentagesView;
      private final  Region buyCaratagePercentagesView;
-
-    private final HashMap<String, Function<Object, Object>> actions;
 
     private Button calculateButton;
     private Label calculateLabel;
 
     
     public BuyJewelryCreateView( 
-        BuyJewelryModel model, 
+        BuyJewelryModel model,
+        BuyJewelryInteractor interactor,
         Region jewelryView,
         Region buyPercentagesView,
-        Region buyCaratagePercentagesView,
-        HashMap<String, Function<Object, Object>> actions
+        Region buyCaratagePercentagesView
     ) 
     {
         super();
@@ -36,8 +38,9 @@ public class BuyJewelryCreateView extends FormView {
         this.jewelryView = jewelryView;
         this.buyPercentagesView = buyPercentagesView;
         this.buyCaratagePercentagesView = buyCaratagePercentagesView;
-        this.actions = actions;
+        this.interactor = interactor;
        makeView();
+       createBindigs();
         
     }
 
@@ -73,23 +76,45 @@ public class BuyJewelryCreateView extends FormView {
     }
 
     private void addActionsToCalculateButton(){
-        calculateButton.visibleProperty().bind(model.calculate());
+        //calculateButton.visibleProperty().bind(model.calculate());
         calculateButton.setOnMouseClicked(event -> {
-            actions.get("calculate").apply(event);
+            model.calculate().set(false);
+            interactor.calculate();
         });
     
     }
 
     @Override
     protected void addActionsToCreateButton() {
-        getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
+       // getCreateButton().visibleProperty().bind(calculateButton.visibleProperty());
         getCreateButton().setOnMouseClicked(event -> {
-            System.out.println("Miau");
-           actions.get("store").apply(null);
+            if(model.create().get()){
+                interactor.store();
+            }
+           if(model.edit().get()){
+               System.out.println("Usted esta editando");
+               interactor.edit();
+           }
+
         });
     }
 
-  
+    @Override
+    protected void addActionsToBackButton() {
 
-    
+        model.index().set(true);
+
+    }
+
+    private void createBindigs(){
+        createButton.disableProperty().bind(model.calculate());
+        createButton.textProperty().bind(model.currentAction());
+    }
+
+    public Button getCalculateButton(){
+        return calculateButton;
+    }
+
+
+
 }

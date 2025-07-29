@@ -2,6 +2,7 @@ package org.example.buy_caratages_percentages;
 
 import java.util.HashMap;
 
+import org.example.buy_percentages.BuyPercentagesInteractor;
 import org.example.components.CustomLabeledComboBox;
 import org.example.utils.Responsive;
 
@@ -11,19 +12,19 @@ import javafx.util.Builder;
 public class BuyCaratagePercentagesView implements  Builder<Region> {
 
     private final BuyCaratagePercentagesModel model;
-    private final  HashMap<String, Runnable> actions ;
+    private final BuyCaratagePercentagesInteractor interactor;
 
     private CustomLabeledComboBox comboBox;
 
-    public BuyCaratagePercentagesView(BuyCaratagePercentagesModel model, HashMap<String, Runnable> actions ){
+    public BuyCaratagePercentagesView(BuyCaratagePercentagesModel model, BuyCaratagePercentagesInteractor interactor ){
         this.model = model;
-        this.actions = actions;
+        this.interactor = interactor;
+        createCombo();
     }
 
 
     @Override
     public Region build() {
-        createCombo();
         return comboBox;
     }
 
@@ -39,11 +40,21 @@ public class BuyCaratagePercentagesView implements  Builder<Region> {
     }
 
     private void configureCombo(){
+        comboBox.getCombo().valueProperty().bindBidirectional(model.selectedString());
        comboBox.getCombo().valueProperty().addListener((obsVal, oldVal, newVal)->{
-            System.out.println(newVal.toString());
-            model.selectedString().set(newVal.toString());
-            actions.get("getLast").run();
-            actions.get("updateSelected").run();
+           if(model.create().get()){
+               if(newVal != null){
+                   System.out.println(newVal.toString());
+                   model.selectedString().set(newVal.toString());
+                   interactor.getLast();
+                   interactor.updateSelected();
+               }
+           }
+
+           if(model.edit().get()){
+               model.selectedString().set(newVal.toString());
+               interactor.updateSelected();
+           }
        });
     }
 

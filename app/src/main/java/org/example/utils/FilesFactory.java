@@ -2,6 +2,7 @@ package org.example.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,8 +24,14 @@ public class FilesFactory {
         File sourceFile;
         try {
             // Convertir la URI string de vuelta a un objeto File
-            sourceFile = new File(new java.net.URI(sourceFilePath));
-        } catch (URISyntaxException e) {
+            // Parsear como URI si comienza con "file:"
+            if (sourceFilePath.startsWith("file:")) {
+                URI uri = URI.create(sourceFilePath);
+                sourceFile = new File(uri);
+            } else {
+                sourceFile = new File(sourceFilePath);
+            }
+        } catch (Exception e) {
             System.err.println("Error de sintaxis URI para el archivo de origen: " + e.getMessage());
             e.printStackTrace();
             return null; // Retorna null en caso de error de sintaxis URI
@@ -32,6 +39,7 @@ public class FilesFactory {
 
         if (!sourceFile.exists() || !sourceFile.isFile()) {
             System.err.println("El archivo de origen no existe o no es un archivo válido: " + sourceFile.getAbsolutePath());
+            System.err.println("SourcePath: " + sourceFilePath);
             return null; // Retorna null si el archivo de origen no es válido
         }
 

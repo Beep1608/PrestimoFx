@@ -1,9 +1,6 @@
 package org.example.constants;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.*;
 
 public class ConstantsModel  {
 
@@ -11,6 +8,9 @@ public class ConstantsModel  {
     private final SimpleDoubleProperty conversion_factor = new SimpleDoubleProperty();
     private final SimpleDoubleProperty security_value = new SimpleDoubleProperty();
     private final SimpleDoubleProperty revenue_gr = new SimpleDoubleProperty();
+    private final SimpleBooleanProperty edit = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty create = new SimpleBooleanProperty(false);
+    private final SimpleBooleanProperty index = new SimpleBooleanProperty(false);
    
  
     public DoubleProperty conversion_factor() {
@@ -25,6 +25,17 @@ public class ConstantsModel  {
 
     public IntegerProperty id(){
         return id;
+    }
+    public BooleanProperty create(){
+        return create;
+    }
+
+    public BooleanProperty edit(){
+        return  edit;
+    }
+
+    public BooleanProperty index(){
+        return  index;
     }
 
      @Override
