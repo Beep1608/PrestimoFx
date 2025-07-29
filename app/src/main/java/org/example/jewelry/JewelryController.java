@@ -54,6 +54,7 @@ public class JewelryController {
                model.edit().set(false);
 
                try{
+                   System.out.println("Limpiando joyería");
                 interactor.clean();
                 createView.imageForm.stopPreview();
                }catch (Exception e){

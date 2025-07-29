@@ -8,6 +8,7 @@ import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
 import org.example.jewelry.JewelryController;
 import org.example.jewelry.JewelryModel;
+import org.example.jewelry.JewelryObject;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
@@ -46,6 +47,8 @@ public class BuyJewelryInteractor {
 
     public BuyJewelryObject store() {
         System.out.println("Aplicado : "+  model.percentage_buy_caratage_applied().get());
+        JewelryObject jewelryObject = jewelryController.getInteractor().store();
+        model.jewelry_id().set(jewelryObject.getId());
         BuyJewelryObject object = new BuyJewelryObject(
                 model.price_gr_inter().get(),
                 model.revenue_extern_sale().get(),
@@ -61,7 +64,7 @@ public class BuyJewelryInteractor {
                 model.metal_price_id().get(),
                 model.percentages_buy_id().get(),
                 model.percentages_caratage_id().get(),
-                model.jewelry_id().get()
+                jewelryObject
         );
         System.out.println(object);
         session.beginTransaction();

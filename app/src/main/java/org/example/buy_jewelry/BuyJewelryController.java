@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.function.Function;
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
 import org.example.buy_jewelry.dto.BuyJewelryIndex;
@@ -97,23 +98,18 @@ public class BuyJewelryController {
 
 
     private void createBindings(){
-       //model.calculate().bind(
-       //    jewelryController.getModel().metal().isEmpty()
-       //    .or(jewelryController.getModel().caratage().isEmpty())
-       //    .or(jewelryController.getModel().image().isEmpty())
-       //    .or(jewelryController.getModel().weight().isEqualTo(0))
-       //    .or(jewelryController.getModel().description().isEmpty())
-       //    .or(buyPercentagesController.getModel().selected().isEqualTo(0))
-       //    .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
-       //    .not() // visible solo si todos los anteriores son falsos
-       //);
-        createView.getCalculateButton().disableProperty().bind(
-                jewelryController.getModel().metal().isEmpty()
+
+        jewelryController.getModel().metal().isEmpty()
                 .or(jewelryController.getModel().caratage().isEmpty())
                 .or(jewelryController.getModel().weight().isEqualTo(0))
                 .or(buyPercentagesController.getModel().selected().isEqualTo(0))
                 .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
-                .not()
+                .not();
+
+        createView.getCalculateButton().disableProperty().bind( jewelryController.getModel().metal().isEmpty()
+                .or(jewelryController.getModel().weight().isEqualTo(0))
+                .or(buyPercentagesController.getModel().selected().isEqualTo(0))
+                .or(buyCaratagePercentagesController.getModel().selected().isEqualTo(0))
         );
 
 

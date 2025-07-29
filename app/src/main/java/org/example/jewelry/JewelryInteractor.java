@@ -40,7 +40,7 @@ public class JewelryInteractor {
             jewelryObject = null;
         }
         System.out.println("El ID es: "+jewelryObject.getId());
-        model.id().set(object.getId());
+        model.id().set(jewelryObject.getId());
         return jewelryObject;
 
 

@@ -33,7 +33,7 @@ public class BuyJewelryObject {
     private int percentages_buy_caratage_id;
 
     @ManyToOne
-    @JoinColumn(name = "jewelry_id", insertable = false, updatable = false)
+    @JoinColumn(name = "jewelry_id")
     private JewelryObject jewelry;
     
     public BuyJewelryObject() {
@@ -58,7 +58,7 @@ public class BuyJewelryObject {
         int metal_price_id,
         int percentages_buy_id,
         int percentages_buy_caratage_id,
-        int jewelry_id
+        JewelryObject jewelry
     )
     {
         this.price_gr_inter = price_gr_inter;
@@ -75,7 +75,7 @@ public class BuyJewelryObject {
         this.metal_price_id = metal_price_id;
         this.percentages_buy_id = percentages_buy_id;
         this.percentages_buy_caratage_id = percentages_buy_caratage_id;
-        this.jewelry.setId(jewelry_id);
+        this.jewelry = jewelry;
 
     }
     public int getId() {

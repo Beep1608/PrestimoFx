@@ -7,6 +7,7 @@ import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_percentages.BuyPercentagesModel;
 import org.example.constants.ConstantsModel;
 import org.example.jewelry.JewelryModel;
+import org.example.jewelry.JewelryObject;
 import org.example.metal_prices.MetalPricesModel;
 import org.hibernate.Session;
 
@@ -33,7 +34,7 @@ public class BuyJewelryService {
         int metal_price_id,
         int percentages_buy_id,
         int percentages_buy_caratage_id,
-        int jewelry_id
+        JewelryObject jewelry
         
     ) {
       
@@ -52,7 +53,7 @@ public class BuyJewelryService {
             metal_price_id, 
             percentages_buy_id, 
             percentages_buy_caratage_id, 
-            jewelry_id
+            jewelry
         );
         System.out.println(object);
         session.beginTransaction();
