@@ -5,7 +5,7 @@ import javafx.beans.value.ObservableBooleanValue;
 
 public class DashboardModel {
 
-    SimpleBooleanProperty buyView = new SimpleBooleanProperty(false);
+    SimpleBooleanProperty buyView = new SimpleBooleanProperty(true);
     SimpleBooleanProperty loanView = new SimpleBooleanProperty(false);
 
 

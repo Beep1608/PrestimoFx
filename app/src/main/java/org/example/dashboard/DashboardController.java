@@ -5,6 +5,7 @@ import org.example.buy_jewelry.BuyJewelryController;
 import org.example.buy_percentages.BuyPercentagesController;
 import org.example.constants.ConstantsController;
 import org.example.jewelry.JewelryController;
+import org.example.loan_jewelry.LoanJewelryController;
 import org.example.metal_prices.MetalPricesController;
 import org.hibernate.Session;
 
@@ -18,6 +19,7 @@ public class DashboardController {
 
     //Controllers
     private final BuyJewelryController buyJewelryController;
+    private final LoanJewelryController loanJewelryController;
     private final JewelryController jewelryController;
     private final BuyPercentagesController buyPercentagesController;
     private final BuyCaratagePercentagesController buyCaratagePercentagesController;
@@ -40,10 +42,13 @@ public class DashboardController {
             constantsController,
             session
         );
+        this.loanJewelryController = new LoanJewelryController(session);
         
-        this.view = new DashboardView(model, buyJewelryController.getView());
+        this.view = new DashboardView(model, buyJewelryController.getView(), loanJewelryController.getView());
         this.interactor = new DashboardInteractor(model);
         this.service = new DashboardService();
+
+        createBindings();
     }
 
     public Region getView() {
@@ -51,6 +56,10 @@ public class DashboardController {
     }
 
 
+    private void createBindings(){
+        buyJewelryController.getView().visibleProperty().bind(model.buyView);
+        loanJewelryController.getView().visibleProperty().bind(model.loanView);
+    }
 
     // Other methods to handle user actions and update the view
     

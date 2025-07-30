@@ -6,6 +6,14 @@ INSERT INTO percentages_buy (minimum, medium, maximum) VALUES
 INSERT INTO percentages_buy_caratage (minimum, medium, maximum) VALUES
 (0.70, 0.78, 0.85);
 
+-- Inserts para percentages_loan_one
+INSERT INTO percentages_loan_one (minimum, medium, maximum) VALUES
+(0.85, 0.90, 0.95);
+
+-- Inserts para percentages_loan_two
+INSERT INTO percentages_loan_two (minimum, medium, maximum) VALUES
+(0.70, 0.78, 0.85);
+
 -- Inserts para currency_prices
 INSERT INTO currency_prices (mxn_value) VALUES
 (18.25);
