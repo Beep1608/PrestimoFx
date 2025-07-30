@@ -5,13 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientCreateView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/dto/ClientCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryCreateView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBarButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBarButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prestimo-create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prestimo-create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prestimo-seeder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prestimo-seeder.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

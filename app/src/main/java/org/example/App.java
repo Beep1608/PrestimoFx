@@ -6,10 +6,13 @@ package org.example;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesObject;
 import org.example.buy_jewelry.BuyJewelryObject;
 import org.example.buy_percentages.BuyPercentageObject;
+import org.example.clients.ClientObject;
 import org.example.constants.ConstantsObject;
 import org.example.currency_prices.CurrencyPricesObject;
 import org.example.dashboard.DashboardController;
 import org.example.jewelry.JewelryObject;
+import org.example.loan_jewelry.LoanJewelryObject;
+import org.example.loan_jewelry.index.LoanJewelryIndexDto;
 import org.example.metal_prices.MetalPricesObject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -55,7 +58,9 @@ public class App extends Application {
         .addAnnotatedClass(MetalPricesObject.class)
         .addAnnotatedClass(CurrencyPricesObject.class)
         .addAnnotatedClass(ConstantsObject.class)
-        .addAnnotatedClass(BuyJewelryObject.class);
+        .addAnnotatedClass(BuyJewelryObject.class)
+                .addAnnotatedClass(LoanJewelryObject.class)
+                .addAnnotatedClass(ClientObject.class);
         sessionFactory = config.buildSessionFactory();
         return  sessionFactory.openSession();
     }

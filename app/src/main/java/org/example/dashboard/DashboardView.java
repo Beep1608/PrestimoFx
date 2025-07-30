@@ -1,6 +1,7 @@
 package org.example.dashboard;
 
 
+import javafx.scene.layout.StackPane;
 import org.example.components.SideBar;
 import org.example.components.SideBarButton;
 import org.example.enums.DashboardEnum;
@@ -20,22 +21,25 @@ public class DashboardView implements Builder<Region>{
 
     private final DashboardModel model;
     private final HBox mainContainer  =new HBox();
-
+    private final StackPane rigthContainer = new StackPane();
 
     private VBox sideBar;
     private HBox buyButton;
+    private HBox loanButton;
 
     private final Region buyView;
+    private final Region loanView;
 
-    public DashboardView(DashboardModel model, Region buyView){
+    public DashboardView(DashboardModel model, Region buyView, Region loanView){
         this.model = model;
         this.buyView = buyView;
+        this.loanView  = loanView;
+        mainContainer.getStyleClass().add("dashboard");
+        makeView();
     }
   
     @Override
     public Region build() {
-       mainContainer.getStyleClass().add("dashboard");
-        makeView();
       return mainContainer;
     }
 
@@ -59,12 +63,26 @@ public class DashboardView implements Builder<Region>{
     
 
     private void createSidebarButtons(){
-        buyButton = new SideBarButton("Buy");
-        buyButton.setOnMouseClicked(event -> {
-            
-            System.out.println("Compra realizada");
-        });
-        sideBar.getChildren().add(buyButton);
+        buyButton = new SideBarButton("Compra") {
+            @Override
+            public void buttonActions() {
+                model.buyView.set(true);
+                model.loanView.set(false);
+                System.out.println("Compra realizada");
+            }
+        };
+
+
+        loanButton = new SideBarButton("Prestamo") {
+            @Override
+            public void buttonActions() {
+                model.loanView.set(true);
+                model.buyView.set(false);
+                System.out.println("Prestamo");
+            }
+        };
+
+        sideBar.getChildren().addAll(buyButton, loanButton);
     }
 
     private void configureRigthSide(){
@@ -75,8 +93,8 @@ public class DashboardView implements Builder<Region>{
                 buyView.setPrefWidth(newValue.doubleValue() - sideBar.getWidth());
             }
         });
-       
-        mainContainer.getChildren().add(buyView);
+        rigthContainer.getChildren().addAll(buyView,loanView);
+        mainContainer.getChildren().add(rigthContainer);
     }
 
    

@@ -6,7 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
-public class SideBarButton extends HBox {
+public abstract class SideBarButton extends HBox {
 
     private String buttonName;
     private String iconPath;
@@ -24,10 +24,14 @@ public class SideBarButton extends HBox {
     private void initializeButton() {
         Button button = new Button(buttonName);
         button.setPrefWidth(BUTTON_WIDTH);
+        button.setOnAction(event -> {
+            buttonActions();
+        });
         button.getStyleClass().add("sidebar-button");
        // IconFactory.createIcon(iconPath, 10,10,this);
         this.getChildren().add(button);
     }
+    public abstract void buttonActions();
 
     public String getButtonName() {
         return buttonName;
