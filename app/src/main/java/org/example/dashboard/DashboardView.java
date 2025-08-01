@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.util.Builder;
 
-public class DashboardView implements Builder<Region>{
+public class DashboardView extends org.jenvy.view.DashboardView {
     
 
     private final DashboardModel model;
@@ -31,22 +31,23 @@ public class DashboardView implements Builder<Region>{
     private final Region loanView;
 
     public DashboardView(DashboardModel model, Region buyView, Region loanView){
+        super();
         this.model = model;
         this.buyView = buyView;
         this.loanView  = loanView;
         mainContainer.getStyleClass().add("dashboard");
-        makeView();
+      //  makeView();
     }
   
-    @Override
-    public Region build() {
-      return mainContainer;
-    }
+   // @Override
+   // public Region build() {
+   //   return mainContainer;
+   // }
 
     private void makeView(){
-        createSideBar();
-        createSidebarButtons();
-        configureRigthSide();
+        //createSideBar();
+        //createSidebarButtons();
+        //configureRigthSide();
         
     }
     

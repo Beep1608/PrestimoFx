@@ -9,7 +9,7 @@ public class CustomTextField extends TextField  {
     }
 
     private void initialize() {
-        this.getStyleClass().add("custom-text-field");
+        this.getStyleClass().add("rounded");
 
     }
     

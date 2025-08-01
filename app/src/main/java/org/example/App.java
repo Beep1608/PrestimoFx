@@ -3,6 +3,9 @@
  */
 package org.example;
 
+import atlantafx.base.theme.Dracula;
+import atlantafx.base.theme.PrimerDark;
+import atlantafx.base.theme.PrimerLight;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesObject;
 import org.example.buy_jewelry.BuyJewelryObject;
 import org.example.buy_percentages.BuyPercentageObject;
@@ -42,6 +45,8 @@ public class App extends Application {
         DashboardController controller = new DashboardController(hibernate());
         Scene scene = new Scene(controller.getView());
         String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
+        Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
+
         scene.getStylesheets().add(cssPath);
         primaryStage.setScene(scene);
         primaryStage.show();

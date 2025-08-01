@@ -20,9 +20,14 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    //testImplementation(libs.junit.jupiter)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    //testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    // Mockito
+    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0") // opcional
+
+   //testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
    // implementation(libs.guava)
@@ -45,6 +50,7 @@ dependencies {
     implementation("org.postgresql:postgresql:42.7.6")
 
     implementation(project(":jenvy:lib"))
+    implementation("io.github.mkpaz:atlantafx-base:2.1.0")
 
 }
 
@@ -96,10 +102,15 @@ tasks.withType<JavaExec> {
 // }
 
 
-// tasks.named<Test>("test") {
-//     // Use JUnit Platform for unit tests.
-//     useJUnitPlatform()
-// }
+//tasks.named<Test>("test") {
+//    useJUnitPlatform()
+//
+//    maxHeapSize = "1G"
+//
+//    testLogging {
+//        events("passed")
+//    }
+//}
 
 // Tarea modificada para que solo jakarta.persistence esté en el classpath
 

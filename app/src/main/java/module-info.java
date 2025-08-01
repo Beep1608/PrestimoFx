@@ -16,7 +16,8 @@ module responsive {
   requires net.bytebuddy;
 
   requires  org.postgresql.jdbc;
-  requires jenvy;
+  requires transitive jenvy;
+  requires atlantafx.base;
   exports org.example;
 
 

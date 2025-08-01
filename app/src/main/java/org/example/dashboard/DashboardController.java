@@ -34,7 +34,7 @@ public class DashboardController {
         this.metalPricesController = new MetalPricesController(session);
         this.constantsController = new ConstantsController(session);
 
-        this.buyJewelryController = new BuyJewelryController( 
+        this.buyJewelryController = new BuyJewelryController(
             jewelryController, 
             buyPercentagesController,
             buyCaratagePercentagesController,
@@ -52,7 +52,7 @@ public class DashboardController {
     }
 
     public Region getView() {
-        return view.build();
+        return view;
     }
 
 

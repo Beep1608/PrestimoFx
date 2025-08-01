@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.function.Function;
 
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import org.example.buy_caratages_percentages.BuyCaratagePercentagesController;
-import org.example.buy_jewelry.dto.BuyJewelryIndex;
 import org.example.buy_jewelry.index.BuyJewelryIndexModel;
 import org.example.buy_jewelry.index.BuyJewelryIndexView;
 import org.example.buy_percentages.BuyPercentagesController;
@@ -92,6 +90,9 @@ public class BuyJewelryController {
 
     public Region getView() {
         return view.build();
+    }
+    public BuyJewelryModel getModel(){
+        return model;
     }
 
 

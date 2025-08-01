@@ -3,7 +3,6 @@ package org.example.clients;
 import javafx.collections.FXCollections;
 import javafx.scene.layout.Region;
 import org.hibernate.Session;
-import org.jenvy.model.CreateModel;
 
 public class ClientController {
 

@@ -5,31 +5,213 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientCreateView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/dto/ClientCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryCreateView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeInsightSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/img/right-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_caratages_percentages/BuyCaratagePercentagesView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryCreateView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/BuyJewelryView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/dto/BuyJewelryIndex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/index/BuyJewelryIndexModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_jewelry/index/BuyJewelryIndexView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentageObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentageView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentagesController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentagesInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentagesModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/buy_percentages/BuyPercentagesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientCreateView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/ClientView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/clients/dto/ClientCreateDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/CustomComboBox.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/CustomLabeledComboBox.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/CustomTextArea.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/CustomTextField.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/FormContainer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/ImageContainer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/SideBar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/components/SideBarButton.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/constants/ConstantsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/constants/ConstantsInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/constants/ConstantsModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/constants/ConstantsObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/constants/ConstantsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/currency_prices/CurrencyPricesInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/currency_prices/CurrencyPricesModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/currency_prices/CurrencyPricesObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/currency_prices/CurrencyPricesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/dashboard/DashboardController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/dashboard/DashboardInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/dashboard/DashboardModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/dashboard/DashboardService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/dashboard/DashboardView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/enums/CaratagesEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/enums/DashboardEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/enums/MetalsEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/enums/PercentagesEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryCreateView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryIndexView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/JewelryView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/jewelry/dto/JewelryEditDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryCreateView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/LoanJewelryView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/index/LoanJewelryIndexDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/index/LoanJewelryIndexModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/loan_jewelry/index/LoanJewelryIndexView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/metal_prices/MetalPricesController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/metal_prices/MetalPricesInteractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/metal_prices/MetalPricesModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/metal_prices/MetalPricesObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/metal_prices/MetalPricesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/utils/FilesFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/utils/IconFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/org/example/utils/Responsive.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/main/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/bin/test/org/example/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/org/example/buy_jewelry/BuyJewelryControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/MainLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/NavTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/DefaultEventBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/EventBus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/NavEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/utils/NodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sun_istack_istack_commons_runtime_4_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_2_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_3_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_el_jakarta_el_api_6_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_enterprise_jakarta_enterprise_cdi_api_4_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_enterprise_jakarta_enterprise_lang_model_4_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_inject_jakarta_inject_api_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_interceptor_jakarta_interceptor_api_2_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_persistence_jakarta_persistence_api_3_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_transaction_jakarta_transaction_api_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_4_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_4_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_1_17_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_antlr_antlr4_runtime_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_qual_3_49_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_angus_angus_activation_2_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jaxb_jaxb_core_4_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jaxb_jaxb_runtime_4_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jaxb_txw2_4_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_models_hibernate_models_1_0_0_CR3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_orm_hibernate_core_7_0_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_6_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_win_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_win_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_win_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_swing_win_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_postgresql_postgresql_42_7_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ResponsiveFX.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ResponsiveFX.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ResponsiveFX.app.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ResponsiveFX.app.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBarButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBarButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryEditView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomComboBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomTextField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prestimo-create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prestimo-create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prestimo-seeder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prestimo-seeder.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryCreateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryCreateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/utils/ActionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/view/FormView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/view/TableView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/Jenvy.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/Jenvy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormComboBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormComboBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormFileUpload.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormFileUpload.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormInputText.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormInputText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormSearchInputText.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormSearchInputText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/components/FormView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/CreateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/DashboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/controller/ShowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/dto/Dto.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/dto/Dto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/CreateInteractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/DashboardInteractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/EditInteractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/IndexInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/IndexInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/Interactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/Interactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/interactor/ShowInteractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/CreateModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/DashboardModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/EditModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/IndexModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/IndexModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/model/ShowModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/utils/Icons.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/utils/Icons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/utils/Responsive.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/utils/Responsive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/CreateView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/DashboardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/DashboardView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/EditView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/IndexView.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/IndexView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/ShowView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/main/org/jenvy/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/bin/test/org/jenvy/LibraryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/bin/test/org/jenvy/LibraryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/controller/CreateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/controller/DashboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/controller/EditController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/controller/ShowController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/CreateInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/DashboardInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/EditInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/ShowInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/CreateModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/DashboardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/DashboardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/EditModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/ShowModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/CreateView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/EditView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/IndexView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/IndexView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/ShowView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/resources/org/jenvy/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/resources/org/jenvy/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +226,23 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ResponsiveFX" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ResponsiveFX" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -70,7 +263,7 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -80,17 +273,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fidel.zarcoa/Documents/Java/PrestimoFx/PrestimoFx/app/src/main/java/org/example/jewelry/show&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "experimental",
+    "last_opened_file_path": "C:/Users/fidel.zarcoa/Documents/Java/PrestimoFx/PrestimoFx/app/src/main/java/org/example/jewelry/show"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fidel.zarcoa\Documents\Java\PrestimoFx\PrestimoFx\app\src\main\java\org\example\jewelry\show" />

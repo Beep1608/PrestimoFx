@@ -9,7 +9,7 @@ public class CustomComboBox extends ComboBox{
     }
 
     private void initialize(){
-     this.getStyleClass().add("custom-combo-box");   
+     this.getStyleClass().addAll("alt-icon","left-pill");
     }
     
 }

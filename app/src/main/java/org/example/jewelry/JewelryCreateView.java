@@ -6,7 +6,6 @@ import java.util.function.Consumer;
 import javafx.util.converter.NumberStringConverter;
 import org.example.components.CustomComboBox;
 import org.example.components.CustomTextArea;
-import org.example.components.CustomTextField;
 import org.example.components.ImageContainer;
 import org.example.enums.CaratagesEnum;
 import org.example.enums.MetalsEnum;
@@ -94,8 +93,8 @@ public class JewelryCreateView implements Builder<Region> {
         imageButtonsContainer.getChildren().add(previewButton);
         imageContainer.getChildren().addAll(imageForm, imageButtonsContainer);
 
-        CustomTextField weigthField = new CustomTextField();
-        Responsive.bindingToParentWidth(weigthField, 1);
+        atlantafx.base.controls.CustomTextField weigthField = new atlantafx.base.controls.CustomTextField();
+       // Responsive.bindingToParentWidth(weigthField, 1);
         weigthField.setPromptText("Ingrese la cantidad en gramos");
         weigthField.textProperty().bindBidirectional(model.weight(), new NumberStringConverter());
 
