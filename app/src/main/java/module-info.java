@@ -36,6 +36,7 @@ module responsive {
   opens org.example.loan_jewelry to jakarta.persistence, javafx.base, org.hibernate.orm.core;
   opens org.example.clients to jakarta.persistence, javafx.base, org.hibernate.orm.core;
   opens org.example.clients.dto to jakarta.persistence, javafx.base, org.hibernate.orm.core;
+  opens org.example.dashboard to jenvy;
 
 
 }

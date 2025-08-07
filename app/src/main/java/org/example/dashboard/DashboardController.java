@@ -10,6 +10,12 @@ import org.example.metal_prices.MetalPricesController;
 import org.hibernate.Session;
 
 import javafx.scene.layout.Region;
+import org.jenvy.model.Model;
+import org.jenvy.view.router.DefaultPageProvider;
+import org.jenvy.view.router.Page;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DashboardController {
     private final DashboardModel model;
@@ -43,7 +49,7 @@ public class DashboardController {
             session
         );
         this.loanJewelryController = new LoanJewelryController(session);
-        
+
         this.view = new DashboardView(model, buyJewelryController.getView(), loanJewelryController.getView());
         this.interactor = new DashboardInteractor(model);
         this.service = new DashboardService();
