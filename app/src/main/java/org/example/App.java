@@ -6,17 +6,8 @@ package org.example;
 import atlantafx.base.theme.Dracula;
 import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;
-import org.example.buy_caratages_percentages.BuyCaratagePercentagesObject;
-import org.example.buy_jewelry.BuyJewelryObject;
-import org.example.buy_percentages.BuyPercentageObject;
-import org.example.clients.ClientObject;
-import org.example.constants.ConstantsObject;
-import org.example.currency_prices.CurrencyPricesObject;
-import org.example.dashboard.DashboardController;
-import org.example.jewelry.JewelryObject;
-import org.example.loan_jewelry.LoanJewelryObject;
-import org.example.loan_jewelry.index.LoanJewelryIndexDto;
-import org.example.metal_prices.MetalPricesObject;
+import org.example.pages.ExamplePage;
+import org.example.pages.ExampleTwoPage;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -24,7 +15,9 @@ import org.hibernate.cfg.Configuration;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.jenvy.view.router.Page;
 
+import java.util.Map;
 
 
 public class App extends Application {
@@ -37,37 +30,43 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
- 
+        Class<?extends Page> defaultPage = ExamplePage.class;
+        Map<String,Class<? extends Page>> map = Map
+                .of(
+                        "uno",ExamplePage.class,
+                        "dos", ExampleTwoPage.class
+                );
+
+        org.jenvy.App app = new org.jenvy.App(map,defaultPage);
+
 
        
     
         primaryStage.setMaximized(true);
-        DashboardController controller = new DashboardController(hibernate());
-        Scene scene = new Scene(controller.getView());
         String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
         Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
 
-        scene.getStylesheets().add(cssPath);
-        primaryStage.setScene(scene);
+      app.scene().getStylesheets().add(cssPath);
+        primaryStage.setScene(app.scene());
         primaryStage.show();
         
     
     }
 
-    public static Session hibernate(){
-        SessionFactory sessionFactory; 
-        var config = new Configuration().configure()
-        .addAnnotatedClass(JewelryObject.class)
-        .addAnnotatedClass(BuyPercentageObject.class)
-        .addAnnotatedClass(BuyCaratagePercentagesObject.class)
-        .addAnnotatedClass(MetalPricesObject.class)
-        .addAnnotatedClass(CurrencyPricesObject.class)
-        .addAnnotatedClass(ConstantsObject.class)
-        .addAnnotatedClass(BuyJewelryObject.class)
-                .addAnnotatedClass(LoanJewelryObject.class)
-                .addAnnotatedClass(ClientObject.class);
-        sessionFactory = config.buildSessionFactory();
-        return  sessionFactory.openSession();
-    }
+   // public static Session hibernate(){
+   //     SessionFactory sessionFactory;
+   //     var config = new Configuration().configure()
+   //     .addAnnotatedClass(JewelryObject.class)
+   //     .addAnnotatedClass(BuyPercentageObject.class)
+   //     .addAnnotatedClass(BuyCaratagePercentagesObject.class)
+   //     .addAnnotatedClass(MetalPricesObject.class)
+   //     .addAnnotatedClass(CurrencyPricesObject.class)
+   //     .addAnnotatedClass(ConstantsObject.class)
+   //     .addAnnotatedClass(BuyJewelryObject.class)
+   //             .addAnnotatedClass(LoanJewelryObject.class)
+   //             .addAnnotatedClass(ClientObject.class);
+   //     sessionFactory = config.buildSessionFactory();
+   //     return  sessionFactory.openSession();
+   // }
     
 }
