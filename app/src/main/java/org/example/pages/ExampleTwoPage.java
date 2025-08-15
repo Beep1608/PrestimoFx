@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import org.jenvy.interactor.Interactor;
 import org.jenvy.model.Model;
+import org.jenvy.view.View;
 import org.jenvy.view.router.Page;
 import org.jenvy.view.router.PageProvider;
 
@@ -17,20 +18,10 @@ public class ExampleTwoPage extends VBox implements Page {
     public ExampleTwoPage(){
         Button button = new Button("Boton");
         button.setOnAction(event -> {
-            nav("uno");
+            nav(ExamplePage.class);
         });
         getChildren().addAll(new Label("Ejemplo 2"), button);
 
-    }
-
-    @Override
-    public PageProvider provider() {
-        return provider;
-    }
-
-    @Override
-    public void setProvider(PageProvider provider) {
-        this.provider = provider;
     }
 
     @Override
@@ -40,22 +31,21 @@ public class ExampleTwoPage extends VBox implements Page {
 
     @Override
     public String name() {
-        return name;
+        return "ExampleTwo";
     }
 
     @Override
-    public Class<? extends Model> model() {
+    public Model model() {
         return null;
     }
 
     @Override
-    public Class<? extends Interactor> interactor() {
+    public Interactor interactor() {
         return null;
     }
 
     @Override
     public void reset() {
-
-        System.out.println("Reseteando jijjijij");
+        System.out.println("Reset");
     }
 }

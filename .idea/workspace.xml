@@ -5,125 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_caratages_percentages/BuyCaratagePercentagesView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryCreateView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/BuyJewelryView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/dto/BuyJewelryIndex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/index/BuyJewelryIndexModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_jewelry/index/BuyJewelryIndexView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentageObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentageView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/buy_percentages/BuyPercentagesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientCreateView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/ClientView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/clients/dto/ClientCreateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomComboBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomLabeledComboBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomTextArea.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/CustomTextField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/FormContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/ImageContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/components/SideBarButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/constants/ConstantsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/currency_prices/CurrencyPricesInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/currency_prices/CurrencyPricesModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/currency_prices/CurrencyPricesObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/currency_prices/CurrencyPricesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/dashboard/DashboardView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/enums/CaratagesEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/enums/DashboardEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/enums/MetalsEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/enums/PercentagesEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryCreateView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryIndexView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/JewelryView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/jewelry/dto/JewelryEditDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryCreateView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/LoanJewelryView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/loan_jewelry/index/LoanJewelryIndexView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/metal_prices/MetalPricesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/utils/FilesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/utils/IconFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/utils/Responsive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/DefaultPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/MainLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/Nav.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/NavTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/components/SideBar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/controller/IndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/NavEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/NavEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/IndexInteractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/Interactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/Interactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/DashboardModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/IndexModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/AppWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/DashboardView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/IndexView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageBus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageBus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,24 +86,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "experimental2",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fidel.zarcoa/Documents/Java/PrestimoFx/PrestimoFx",
-    "settings.editor.selected.configurable": "preferences.updates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;experimental2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fidel.zarcoa/Documents/Java/PrestimoFx/PrestimoFx&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fidel.zarcoa\Documents\Java\PrestimoFx\PrestimoFx\app\src\main\java\org\example\jewelry\show" />

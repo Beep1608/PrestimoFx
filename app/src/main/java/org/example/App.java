@@ -15,7 +15,7 @@ import org.hibernate.cfg.Configuration;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.jenvy.view.router.Page;
+import org.jenvy.view.router.*;
 
 import java.util.Map;
 
@@ -31,14 +31,6 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Class<?extends Page> defaultPage = ExamplePage.class;
-        Map<String,Class<? extends Page>> map = Map
-                .of(
-                        "uno",ExamplePage.class,
-                        "dos", ExampleTwoPage.class
-                );
-
-        org.jenvy.App app = new org.jenvy.App(map,defaultPage);
-
 
        
     
@@ -46,6 +38,10 @@ public class App extends Application {
         String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
         Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
 
+        PageFactory factory = new DefaultPageFactory();
+        PageContainer container = new DefaultPageContainer();
+        PageProvider provider = new DefaultIPageProvider();
+        org.jenvy.App app = new org.jenvy.App();
       app.scene().getStylesheets().add(cssPath);
         primaryStage.setScene(app.scene());
         primaryStage.show();

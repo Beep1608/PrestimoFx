@@ -17,21 +17,12 @@ public class ExamplePage extends VBox implements Page {
     public ExamplePage(){
         Button button = new Button("Boton");
         button.setOnAction(event -> {
-            nav("dos");
+            nav(ExampleTwoPage.class);
         });
         getChildren().addAll(new Label("Ejemplo 1"), button);
 
     }
 
-    @Override
-    public PageProvider provider() {
-        return provider;
-    }
-
-    @Override
-    public void setProvider(PageProvider provider) {
-        this.provider = provider;
-    }
 
     @Override
     public Parent view() {
@@ -40,22 +31,21 @@ public class ExamplePage extends VBox implements Page {
 
     @Override
     public String name() {
-        return name;
+        return "ExampleOne";
     }
 
     @Override
-    public Class<? extends Model> model() {
+    public Model model() {
         return null;
     }
 
     @Override
-    public Class<? extends Interactor> interactor() {
+    public Interactor interactor() {
         return null;
     }
 
     @Override
     public void reset() {
-
-        System.out.println("Reseteando jijjijij");
+        System.out.println("Reset : "+name());
     }
 }
