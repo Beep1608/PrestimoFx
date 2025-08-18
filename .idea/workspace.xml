@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/NavEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/events/NavEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/AbstractPageFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/org/example/buy_jewelry/BuyJewelryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/org/example/buy_jewelry/BuyJewelryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

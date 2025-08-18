@@ -30,19 +30,21 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Class<?extends Page> defaultPage = ExamplePage.class;
 
        
     
+
+        Page page = new ExamplePage();
+        PageFactory factory = new DefaultPageFactory();
+        PageContainer container = new DefaultPageContainer();
+        PageProvider provider = new DefaultPageProvider(container, factory, page);
+        org.jenvy.App app = new org.jenvy.App(provider);
+
+
         primaryStage.setMaximized(true);
         String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
         Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
-
-        PageFactory factory = new DefaultPageFactory();
-        PageContainer container = new DefaultPageContainer();
-        PageProvider provider = new DefaultIPageProvider();
-        org.jenvy.App app = new org.jenvy.App();
-      app.scene().getStylesheets().add(cssPath);
+        app.scene().getStylesheets().add(cssPath);
         primaryStage.setScene(app.scene());
         primaryStage.show();
         
