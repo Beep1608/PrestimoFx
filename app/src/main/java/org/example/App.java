@@ -4,20 +4,12 @@
 package org.example;
 
 import atlantafx.base.theme.Dracula;
-import atlantafx.base.theme.PrimerDark;
-import atlantafx.base.theme.PrimerLight;
-import org.example.pages.ExamplePage;
-import org.example.pages.ExampleTwoPage;
+import org.example.pages.LoginPage;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.jenvy.view.router.*;
-
-import java.util.Map;
 
 
 public class App extends Application {
@@ -31,10 +23,8 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-       
-    
 
-        Page page = new ExamplePage();
+        Page page = new LoginPage();
         PageFactory factory = new DefaultPageFactory();
         PageContainer container = new DefaultPageContainer();
         PageProvider provider = new DefaultPageProvider(container, factory, page);

@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee8e730-43b3-4e2d-a965-d1fbe01536e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/interactors/LoginInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/models/LoginModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/example/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/utils/ReflectionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/org/example/buy_jewelry/BuyJewelryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/org/example/buy_jewelry/BuyJewelryControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultIPageProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/DefaultPageContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/IPageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExamplePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/example/pages/ExampleTwoPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/Interactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/interactor/Interactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/utils/Responsive.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/utils/Responsive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/jenvy/lib/src/main/java/org/jenvy/view/router/PageProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +108,19 @@
       <recent name="C:\Users\fidel.zarcoa\Documents\Java\PrestimoFx\PrestimoFx\app\src\main\java\org\example\jewelry\show" />
       <recent name="C:\Users\fidel.zarcoa\Documents\Java\PrestimoFx\PrestimoFx\app\src\main\java\org\example\jewelry\edit" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="kotlin.scripts.KotlinBuildScript...\::Users:fidel.zarcoa:Documents:Java:PrestimoFx:PrestimoFx:jenvy:lib:build.gradle.kts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="kotlin.scripts.KotlinBuildScript...\::Users:fidel.zarcoa:Documents:Java:PrestimoFx:PrestimoFx:jenvy:lib:build.gradle.kts" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

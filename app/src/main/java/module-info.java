@@ -18,12 +18,17 @@ module responsive {
   requires  org.postgresql.jdbc;
   requires transitive jenvy;
   requires atlantafx.base;
-  exports org.example;
+  requires org.kordamp.ikonli.javafx;
+  requires org.kordamp.ikonli.boxicons;
+
+
+    exports org.example;
 
 
 
   opens org.example to jakarta.persistence,  org.hibernate.orm.core;
   opens org.example.pages to jenvy;
+  opens org.example.models to jenvy;
 
 
 
