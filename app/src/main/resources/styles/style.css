@@ -1,3 +1,17 @@
+
+.test-one{
+    -fx-background-color:#a83232;
+}
+.test-two{
+    -fx-background-color:#eaff00;
+}
+.test-three{
+    -fx-background-color:#1aff00;
+}
+.test-four{
+    -fx-background-color:#00ffcc;
+}
+
 /*.dashboard{
      -fx-background-color: #5cba7000;
 

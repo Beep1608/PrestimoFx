@@ -20,6 +20,7 @@ module responsive {
   requires atlantafx.base;
   requires org.kordamp.ikonli.javafx;
   requires org.kordamp.ikonli.boxicons;
+  requires org.kordamp.ikonli.bytedance;
 
 
     exports org.example;

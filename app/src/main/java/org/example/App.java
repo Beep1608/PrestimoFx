@@ -3,7 +3,7 @@
  */
 package org.example;
 
-import atlantafx.base.theme.Dracula;
+import atlantafx.base.theme.*;
 import org.example.pages.LoginPage;
 import org.hibernate.Session;
 
@@ -33,7 +33,7 @@ public class App extends Application {
 
         primaryStage.setMaximized(true);
         String cssPath = getClass().getResource("/styles/style.css").toExternalForm();
-        Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
+        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
         app.scene().getStylesheets().add(cssPath);
         primaryStage.setScene(app.scene());
         primaryStage.show();
