@@ -47,6 +47,14 @@ dependencies {
     implementation("com.fasterxml:classmate:1.7.0")
     implementation("net.bytebuddy:byte-buddy:1.17.5")
 
+    val lombokVersion = "1.18.30" // Usa la versión más reciente
+
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+
+    // 2. Procesador de Anotaciones (CRUCIAL)
+    // Esto le indica a Gradle que ejecute Lombok para generar el código.
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    implementation("org.projectlombok:lombok:1.18.30")
     implementation("org.postgresql:postgresql:42.7.6")
 
     implementation(project(":jenvy:lib"))
@@ -54,6 +62,8 @@ dependencies {
     implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
     implementation("org.kordamp.ikonli:ikonli-boxicons-pack:12.4.0")
     implementation("org.kordamp.ikonli:ikonli-bytedance-pack:12.4.0")
+    implementation("org.kordamp.ikonli:ikonli-entypo-pack:12.4.0")
+    implementation("org.kordamp.ikonli:ikonli-fluentui-pack:12.4.0")
 
 }
 

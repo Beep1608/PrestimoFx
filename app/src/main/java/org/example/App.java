@@ -4,19 +4,25 @@
 package org.example;
 
 import atlantafx.base.theme.*;
+import org.example.entity.UserEntity;
 import org.example.pages.LoginPage;
 import org.hibernate.Session;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.jenvy.view.router.*;
 
 
 public class App extends Application {
-   private Session session;
+   public static Session session;
+
+   public static boolean offline = false;
 
     public static void main(String[] args) {
-        
+
+        session = hibernate();
         launch(args);
     }
 
@@ -41,20 +47,12 @@ public class App extends Application {
     
     }
 
-   // public static Session hibernate(){
-   //     SessionFactory sessionFactory;
-   //     var config = new Configuration().configure()
-   //     .addAnnotatedClass(JewelryObject.class)
-   //     .addAnnotatedClass(BuyPercentageObject.class)
-   //     .addAnnotatedClass(BuyCaratagePercentagesObject.class)
-   //     .addAnnotatedClass(MetalPricesObject.class)
-   //     .addAnnotatedClass(CurrencyPricesObject.class)
-   //     .addAnnotatedClass(ConstantsObject.class)
-   //     .addAnnotatedClass(BuyJewelryObject.class)
-   //             .addAnnotatedClass(LoanJewelryObject.class)
-   //             .addAnnotatedClass(ClientObject.class);
-   //     sessionFactory = config.buildSessionFactory();
-   //     return  sessionFactory.openSession();
-   // }
+   public static Session hibernate(){
+       SessionFactory sessionFactory;
+       var config = new Configuration().configure()
+       .addAnnotatedClass(UserEntity.class);
+       sessionFactory = config.buildSessionFactory();
+       return  sessionFactory.openSession();
+   }
     
 }
