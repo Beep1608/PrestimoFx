@@ -51,11 +51,11 @@ public class LoginPage extends VBox implements Page {
     HBox loginButtonContainer = new HBox(loginButton);
     public LoginPage(){
         this.model = new LoginModel();
-        this.interactor = new LoginInteractor();
-        init();
+        this.interactor = new LoginInteractor(model);
         container.getChildren().addAll(logoContainer,this);
         container.setAlignment(Pos.CENTER);
         HBox.setHgrow(logoContainer, Priority.ALWAYS);
+        init();
     }
 
     private void init(){
@@ -103,11 +103,10 @@ public class LoginPage extends VBox implements Page {
         loginButton.getStyleClass().addAll(Styles.BUTTON_OUTLINED, Styles.ACCENT, Styles.LARGE);
         HBox.setHgrow(loginButton, Priority.ALWAYS);
         loginButton.setOnAction(actionEvent -> {
-           boolean mail = emptyMail();
+            boolean mail = emptyMail();
             boolean pass = emptyPassword();
             if(!mail &&  !pass){
-                interactor.login(email.getText(), ((PasswordTextFormatter)password.getTextFormatter()).getPassword() );
-                return;
+                login();
             }
         });
 
@@ -170,6 +169,15 @@ public class LoginPage extends VBox implements Page {
         }
 
         return false;
+    }
+
+    private void login(){
+        if(interactor.login(email.getText(), ((PasswordTextFormatter)password.getTextFormatter()).getPassword()))
+        {
+            loginButton.pseudoClassStateChanged(Styles.STATE_SUCCESS,true);
+            this.getChildren().add(new Label("Inicio de sesión exitoso"));
+        }
+
     }
 
     @Override

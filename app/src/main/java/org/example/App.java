@@ -18,7 +18,7 @@ import org.jenvy.view.router.*;
 public class App extends Application {
    public static Session session;
 
-   public static boolean offline = false;
+   public static boolean offline = true;
 
     public static void main(String[] args) {
 

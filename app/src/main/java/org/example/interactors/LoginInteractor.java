@@ -1,28 +1,31 @@
 package org.example.interactors;
 
+import javafx.scene.Node;
 import org.example.App;
 import org.example.entity.UserEntity;
+import org.example.models.LoginModel;
 import org.jenvy.interactor.Interactor;
 
 public class LoginInteractor extends Interactor {
 
-    public void login(String email, String password){
+    private LoginModel model;
 
-        if(loginOffline()){
-            System.out.println("Se encontró usuario");
+    public LoginInteractor(LoginModel model){
+        this.model = model;
+    }
+
+    public boolean login(String email, String password){
+
+        if(App.offline){
+            return loginOffline();
         }
 
-
+        return false;
     }
 
     private boolean loginOffline(){
         UserEntity user = App.session.find(UserEntity.class,1L);
-        System.out.println("User :"+ user);
-        if(user != null){
-            System.out.println("User :"+ user.getId());
-            System.out.println("User :"+ user.getUsername());
-            System.out.println("User :"+ user.getEmail());
-        }
+        model.user().set(user);
         return user != null;
     }
 
