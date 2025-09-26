@@ -1,10 +1,8 @@
 package org.example.pages;
 
-import atlantafx.base.controls.Card;
-import atlantafx.base.controls.CustomTextField;
-import atlantafx.base.controls.PasswordTextField;
-import atlantafx.base.controls.Tile;
+import atlantafx.base.controls.*;
 import atlantafx.base.theme.Styles;
+import atlantafx.base.util.Animations;
 import atlantafx.base.util.PasswordTextFormatter;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,14 +12,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.util.Duration;
 import javafx.util.StringConverter;
 import javafx.util.converter.DefaultStringConverter;
+import org.example.enums.SIZES;
 import org.example.interactors.LoginInteractor;
 import org.example.models.LoginModel;
+import org.example.responsive.ResponsiveUtils;
 import org.jenvy.interactor.Interactor;
 import org.jenvy.model.Model;
 import org.jenvy.view.router.Page;
@@ -29,6 +27,8 @@ import org.kordamp.ikonli.bytedance.BytedanceIconsBoldAL;
 import org.kordamp.ikonli.bytedance.BytedanceIconsBoldMZ;
 import org.kordamp.ikonli.fluentui.FluentUiRegularAL;
 import org.kordamp.ikonli.javafx.FontIcon;
+
+import javax.swing.text.Style;
 
 public class LoginPage extends VBox implements Page {
 
@@ -49,6 +49,12 @@ public class LoginPage extends VBox implements Page {
     Button loginButton = new Button("Iniciar Sesión !");
 
     HBox loginButtonContainer = new HBox(loginButton);
+
+    VBox notificationContainer = new VBox();
+
+    Card loginCard  = new Card();
+
+    Message succes;
     public LoginPage(){
         this.model = new LoginModel();
         this.interactor = new LoginInteractor(model);
@@ -59,8 +65,7 @@ public class LoginPage extends VBox implements Page {
     }
 
     private void init(){
-        this.setAlignment(Pos.CENTER_LEFT);
-        Card loginCard = new Card();
+
         loginCard.setMinWidth(300);
         loginCard.setMinHeight(200);
 
@@ -135,16 +140,20 @@ public class LoginPage extends VBox implements Page {
 
         this.setPadding(new Insets(10,300,10,300));
 
-        this.getChildren().addAll(loginCard);
 
-        this.setAlignment(Pos.CENTER_LEFT);
+        this.getChildren().addAll(loginCard, notificationContainer);
+
+        this.setAlignment(Pos.BOTTOM_CENTER);
 
 
         logoContainer.getStyleClass().add("test-one");
         logoContainer.setAlignment(Pos.CENTER_LEFT);
         logoContainer.getChildren().addAll(new Label("Hola"));
 
-
+        succes = new Message("Inicio de sesión exitoso", "Bienvenido de nuevo !",new FontIcon(FluentUiRegularAL.CHECKMARK_CIRCLE_20));
+        succes.setVisible(false);
+        notificationContainer.getChildren().add(succes);
+        responsive();
     }
 
     private boolean emptyMail(){
@@ -174,10 +183,44 @@ public class LoginPage extends VBox implements Page {
     private void login(){
         if(interactor.login(email.getText(), ((PasswordTextFormatter)password.getTextFormatter()).getPassword()))
         {
+            succes.setVisible(true);
             loginButton.pseudoClassStateChanged(Styles.STATE_SUCCESS,true);
-            this.getChildren().add(new Label("Inicio de sesión exitoso"));
+
+            succes.getStyleClass().addAll(Styles.ACCENT, Styles.ELEVATED_1, Styles.SUCCESS);
+            var succesAnimation = Animations.slideInRight(succes, Duration.seconds(1));
+
+            notificationContainer.setPadding(new Insets(10,0,0,0));
+
+
+            notificationContainer.setAlignment(Pos.TOP_LEFT);
+            succesAnimation.setOnFinished(actionEvent -> {
+                nav(HomePage.class);
+            });
+            succesAnimation.playFromStart();
+
+
+
+
+
         }
 
+    }
+
+    /*
+    /* Metodos responsivos
+     */
+
+    private void responsive (){
+        responsiveNotification();
+    }
+    private void responsiveNotification(){
+        this.heightProperty().addListener((observableValue, oldValue, newValue) -> {
+            if(this.getHeight() <= SIZES.SHORT_HEIGHT){
+                notificationContainer.setMinHeight((newValue.doubleValue() * 0.5) - loginCard.getHeight() );
+            }else {
+                notificationContainer.setMinHeight((newValue.doubleValue() * 0.5) - loginCard.getHeight() +100);
+            }
+        });
     }
 
     @Override
